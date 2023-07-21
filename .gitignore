@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+
+# Build output
+build/
+dist/
+
+# Sphinx output
+source/_build/
+
+# Compiled files
+*.mo
+*.pot
+
+# Cache and logs
+*.cache
+*.log
+
+# Sphinx Book Theme
+sphinx_book_theme/static/
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
