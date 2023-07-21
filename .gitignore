@@ -22,7 +22,6 @@ sphinx_book_theme/static/
 
 # Docker
 Dockerfile
-docker-compose.yml
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
