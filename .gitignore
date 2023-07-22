@@ -20,11 +20,7 @@ source/_build/
 # Sphinx Book Theme
 sphinx_book_theme/static/
 
-# Docker
-Dockerfile
-
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Virtual environment
-venv/
+/source/_static/files/gost/
