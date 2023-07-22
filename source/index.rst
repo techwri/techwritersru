@@ -10,8 +10,8 @@
    :maxdepth: 2
    :caption: Contents:
 
-   communities
-   gost
+   links
+   gost/index
    learning
    books
 
