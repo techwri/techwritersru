@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Techwriters.ru'
-copyright = '2023, Techwriters.ru'
+copyright = '2005-2023, Techwriters.ru'
 author = 'Techwriters.ru'
 release = 'ver. 1.0'
 
@@ -26,5 +26,7 @@ language = 'ru'
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
+html_title = "TechWriters.ru"  # название сайта
+
 
 

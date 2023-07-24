@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 # Установите зависимости
-RUN pip install sphinx sphinx-book-theme
+RUN pip install sphinx-book-theme
 
 # Соберите HTML документацию
 RUN make html

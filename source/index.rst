@@ -10,10 +10,17 @@
    :maxdepth: 2
    :caption: Contents:
 
-   links
-   gost/index
    learning
+   docs_as_code
    books
+   comment_documentation
+   users_documentation_roles
+   types_documentation
+   api_documentation
+   technical_writer_interview_questions.rst
+   gost/index
+   links
+   glossary
 
 
 Indices and tables
