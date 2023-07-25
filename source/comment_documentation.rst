@@ -1,5 +1,4 @@
 .. title:: Документирование комментариев: Искусство понятного кода
-.. image:: https://images.unsplash.com/photo-1566297076362-5c8212b4a640
    :alt: Code Documentation
 
 Документирование комментариев
