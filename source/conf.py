@@ -27,3 +27,21 @@ languages = ['en', 'ru']  # Список поддерживаемых языко
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 html_title = "TechWriters.ru"  # название сайта
+
+# -- Options for Sphinx Book Theme ------------------------------------------
+# Добавьте настройки кнопок прямо в conf.py
+html_theme_options = {
+    "repository_url": "https://github.com/techwri/techwritersweb",
+    "repository_branch": "develop",  # Или ветка, которую вы используете
+    "use_repository_button": True,
+    "use_edit_page_button": True,
+    "use_download_button": True,
+}
+
+html_context = {
+    "display_github": True,
+    "github_user": "techwri",
+    "github_repo": "techwritersweb",
+    "github_version": "develop",  # Или ветка, которую вы используете
+    "conf_py_path": "/source/",  # Путь к директории, содержащей файл conf.py относительно корня репозитория
+}
