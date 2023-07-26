@@ -4,6 +4,15 @@
 Бесплатные курсы
 ----------------
 
+Technical Writing Fundamentals (Курс по документированию API)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**язык**: русский
+
+Курс по документированию API. Вольный перевод курса Documenting APIs: a guide for technical writers, составленного Томом Джонсоном, техническим писателем Amazon.
+
+Ссылка: https://starkovden.github.io/index.html
+
 Google's Technical Writing Course
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,15 +49,3 @@ Technical Writing: Documentation on Software Projects
 
 Ссылка: https://www.pluralsight.com/courses/technical-writing-software-documentation
 
-
-Бесплатные курсы
-----------------
-
-**язык**: русский
-
-Technical Writing Fundamentals
-------------------------------
-
-Курс по документированию API. Вольный перевод курса Documenting APIs: a guide for technical writers, составленного Томом Джонсоном, техническим писателем Amazon.
-
-Ссылка: https://starkovden.github.io/index.html
