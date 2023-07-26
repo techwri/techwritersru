@@ -15,19 +15,20 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Содержание:
 
-   learning
-   docs_as_code
-   books
-   comment_documentation
-   users_documentation_roles
-   types_documentation
-   api_documentation
-   technical_writer_interview_questions.rst
-   gost/index
-   links
-   glossary
+   ru/technical_writer/index
+   ru/learning
+   ru/docs_as_code
+   ru/books
+   ru/comment_documentation
+   ru/users_documentation_roles
+   ru/types_documentation
+   ru/api_documentation
+   ru/gost/index
+   ru/links
+   ru/technical_writer/tips_for_recruiters
+   ru/glossary
 
 
 Indices and tables
