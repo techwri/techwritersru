@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Techwriters.ru'
-copyright = '2005-2023, Евгений Захаренко, Сайт для технических писателей - Techwriters.ru'
+copyright = '2005-2023, Евгений Захаренко, Сайт технических писателей - Techwriters.ru'
 author = 'Евгений Захаренко, Techwriters.ru'
 release = 'ver. 1.0'
 

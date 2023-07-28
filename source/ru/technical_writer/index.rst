@@ -8,5 +8,6 @@
    :caption: Содержание:
 
    levels_technical_writer
-   interview/tips_for_recruiters
-   career_development_guide.rst
+   interview/index
+   career_development_guide
+   working_in_team/index
