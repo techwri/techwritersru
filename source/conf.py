@@ -18,7 +18,6 @@ extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
-
 languages = ['en', 'ru']  # Список поддерживаемых языков
 
 # -- Options for HTML output -------------------------------------------------
@@ -29,6 +28,7 @@ html_static_path = ['_static']
 html_title = "TechWriters.ru"  # название сайта
 
 # -- Options for Sphinx Book Theme ------------------------------------------
+
 html_theme_options = {
     "repository_url": "https://github.com/techwri/techwritersweb",
     "use_source_button": True,

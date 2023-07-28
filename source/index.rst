@@ -18,6 +18,7 @@
    :caption: Содержание:
 
    ru/technical_writer/index
+   ru/technical_writer/interview/index
    ru/learning
    ru/docs_as_code
    ru/books
@@ -27,7 +28,6 @@
    ru/api_documentation
    ru/gost/index
    ru/links
-   ru/technical_writer/tips_for_recruiters
    ru/glossary
 
 
