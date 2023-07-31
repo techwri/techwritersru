@@ -16,13 +16,11 @@
 
    ru/technical_writer/index
    ru/tools_and_technologies/index
+   ru/documentation_development/index
    ru/learning
    ru/books
-   ru/comment_documentation
-   ru/users_documentation_roles
-   ru/types_documentation
-   ru/api_documentation
    ru/gost/index
+   ru/gost/templates/gost_19/index
    ru/links
    ru/glossary
 
