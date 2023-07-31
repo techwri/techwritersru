@@ -13,7 +13,7 @@ Materials from the "old" website will gradually be made available on this site.
    :maxdepth: 3
    :caption: Contents:
 
-   en/test
+   test
 
 
 Indices and tables

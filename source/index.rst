@@ -15,8 +15,8 @@
    :caption: Содержание:
 
    ru/technical_writer/index
+   ru/tools_and_technologies/index
    ru/learning
-   ru/docs_as_code
    ru/books
    ru/comment_documentation
    ru/users_documentation_roles
@@ -26,6 +26,14 @@
    ru/links
    ru/glossary
 
+Документация на английском
+--------------------------
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Содержание:
+
+   en/index
 
 Indices and tables
 ==================
