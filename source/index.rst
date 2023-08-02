@@ -22,6 +22,7 @@
    ru/gost/index
    ru/gost/templates/gost_19/index
    ru/links
+   ru/about_project/index
    ru/glossary
 
 Документация на английском

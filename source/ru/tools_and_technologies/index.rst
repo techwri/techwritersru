@@ -12,6 +12,6 @@
    schemes_and_diagrams
    translation_and_grammar
    API_tools
-   automatic_documentation_generation
+   autogeneration_documentation
    ai
 

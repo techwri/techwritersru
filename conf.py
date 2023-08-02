@@ -25,7 +25,7 @@ languages = ['en', 'ru']  # Список поддерживаемых языко
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['source/_static']
-html_title = "TechnicalWriter.me"  # название сайта
+html_title = "TechWriters.ru"  # название сайта
 
 # -- Options for Sphinx Book Theme ------------------------------------------
 
