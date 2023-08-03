@@ -1,3 +1,4 @@
 # Установка зависимостей для сборки документации
-sphinx
+
 sphinx-book-theme
+sphinx-tabs
