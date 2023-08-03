@@ -14,7 +14,7 @@ release = 'ver. 1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx_tabs.tabs']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -37,4 +37,6 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_repository_button": True,
     "use_issues_button": True,
+    "announcement": "Чат технических писателей!",
+    "extra_footer": "<div>Текст внизу</div>",
 }
