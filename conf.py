@@ -14,7 +14,14 @@ release = 'ver. 1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx_tabs.tabs']
+extensions = [
+    'sphinx_tabs.tabs',
+    'sphinx.ext.graphviz',
+    'sphinxcontrib.plantuml',
+]
+
+plantuml = 'java -jar /app/plantuml.jar'
+plantuml_output_format = 'png'
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -23,11 +30,11 @@ languages = ['en', 'ru']  # Список поддерживаемых языко
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+# -- Options for Sphinx Book Theme ------------------------------------------
+
 html_theme = 'sphinx_book_theme'
-html_static_path = ['source/_static']
 html_title = "TechWriters.ru"  # название сайта
 
-# -- Options for Sphinx Book Theme ------------------------------------------
 
 html_theme_options = {
     "repository_url": "https://github.com/techwri/techwritersweb",
