@@ -67,6 +67,34 @@
     - Два
     - Три
 
+UML
+~~~
+
+Пример::
+
+.. uml::
+
+    @startuml
+    Alice -> Bob: Authentication Request
+    Bob --> Alice: Authentication Response
+
+    Alice -> Bob: Another authentication Request
+    Alice <-- Bob: Another authentication Response
+    @enduml
+
+Результат:
+
+.. uml::
+
+    @startuml
+    Alice -> Bob: Authentication Request
+    Bob --> Alice: Authentication Response
+
+    Alice -> Bob: Another authentication Request
+    Alice <-- Bob: Another authentication Response
+    @enduml
+
+
 Комментарии
 ~~~~~~~~~~~
 Можно оставлять комментарии, которые отображаются только в исходном файле ReST. Комментарии создаются с помощью двух точек в начале предложения ``..``. Для создания многострочных комментариев необходимо соблюдать отступ:
