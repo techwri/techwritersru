@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Techwriters.ru'
-copyright = '2005-2023, Евгений Захаренко, Сайт технических писателей - Techwriters.ru'
-author = 'Евгений Захаренко, Techwriters.ru'
+copyright = '2005-2023, Сайт технических писателей - Techwriters.ru, '
+author = 'Evgeny Zakharenko'
 release = 'ver. 1.0'
 
 # -- General configuration ---------------------------------------------------
@@ -44,6 +44,6 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_repository_button": True,
     "use_issues_button": True,
-    "announcement": "Чат технических писателей!",
+    "announcement": "Чат технических писателей",
     "extra_footer": "<div>Текст внизу</div>",
 }
