@@ -8,3 +8,4 @@
    :caption: Содержание:
 
    style_guide
+   project_structure/index

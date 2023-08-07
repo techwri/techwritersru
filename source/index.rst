@@ -25,18 +25,8 @@
    ru/about_project/index
    ru/glossary
 
-Документация на английском
---------------------------
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Содержание:
-
-   en/index
-
-Indices and tables
-==================
+Поиск и алфавитный указатель
+============================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

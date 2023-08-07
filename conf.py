@@ -32,7 +32,7 @@ languages = ['en', 'ru']  # Список поддерживаемых языко
 
 # -- Options for Sphinx Book Theme ------------------------------------------
 
-html_theme = 'sphinx_book_theme'
+html_theme = 'sphinx_book_theme' # используемая тема сайта
 html_title = "TechWriters.ru"  # название сайта
 
 
@@ -47,3 +47,6 @@ html_theme_options = {
     "announcement": "Чат технических писателей",
     "extra_footer": "<div>Текст внизу</div>",
 }
+
+# Другие настройки и импорты (линтеры, скрипты)
+

@@ -5,7 +5,7 @@ FROM python:3.8 as builder
 ENV PYTHONUNBUFFERED=1
 
 # Установка системных зависимостей (graphviz и Java Runtime Environment)
-RUN apt-get update && apt-get install -y graphviz default-jre
+RUN apt-get update && apt-get install -y graphviz default-jre -v 2>&1
 
 WORKDIR /app
 COPY . /app
