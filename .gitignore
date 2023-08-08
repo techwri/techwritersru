@@ -23,5 +23,5 @@ sphinx_book_theme/static/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-/source/_static/ru/gost/
 plantuml.jar
+/source/_static/ru/files/gost/
