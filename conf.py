@@ -5,6 +5,15 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import sys
+import logging
+
+# Configure logging to stdout
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)  # Установите нужный уровень логирования (DEBUG, INFO, ERROR и т.д.)
+
 
 project = 'Techwriters.ru'
 copyright = '2005-2023, Сайт технических писателей - Techwriters.ru, '
@@ -13,6 +22,7 @@ release = 'ver. 1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
 
 extensions = [
     'sphinx_tabs.tabs',
@@ -32,8 +42,9 @@ languages = ['en', 'ru']  # Список поддерживаемых языко
 
 # -- Options for Sphinx Book Theme ------------------------------------------
 
-html_theme = 'sphinx_book_theme' # используемая тема сайта
+html_theme = 'sphinx_book_theme'  # используемая тема сайта
 html_title = "TechWriters.ru"  # название сайта
+html_static_path = ['source/_static']  # путь к статичным файлам
 
 
 html_theme_options = {
