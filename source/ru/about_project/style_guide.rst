@@ -72,15 +72,15 @@ UML
 
 Пример::
 
-.. uml::
+    .. uml::
 
-    @startuml
-    Alice -> Bob: Authentication Request
-    Bob --> Alice: Authentication Response
+        @startuml
+        Alice -> Bob: Authentication Request
+        Bob --> Alice: Authentication Response
 
-    Alice -> Bob: Another authentication Request
-    Alice <-- Bob: Another authentication Response
-    @enduml
+        Alice -> Bob: Another authentication Request
+        Alice <-- Bob: Another authentication Response
+        @enduml
 
 Результат:
 
