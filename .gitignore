@@ -24,4 +24,5 @@ sphinx_book_theme/static/
 .ipynb_checkpoints/
 
 plantuml.jar
-/source/_static/ru/files/gost/
+
+/source/_static/

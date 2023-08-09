@@ -57,6 +57,7 @@ html_theme_options = {
     "use_issues_button": True,
     "announcement": "Чат технических писателей",
     "extra_footer": "<div>Текст внизу</div>",
+    "use_sidenotes": True,   # подключение отображение блоков в тексте https://sphinx-book-theme.readthedocs.io/en/stable/content/content-blocks.html#activate-sidenotes-and-marginnotes
 }
 
 # Другие настройки и импорты (линтеры, скрипты)

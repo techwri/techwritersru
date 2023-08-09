@@ -16,7 +16,13 @@
     **** about_project
     ***** project_structure
     ****** project_block_diagram.rst
+    **** documentation_development
+    **** gost
+    **** technical_writer
+    **** tools_and_technologies
+    *** books.rst
     *** glossary.rst
+    *** learning.rst
     *** links.rst
     ** conf.py
     ** Dockerfile
