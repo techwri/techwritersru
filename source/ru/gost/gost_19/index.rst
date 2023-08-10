@@ -13,3 +13,4 @@
    tz
    poyasnitelnaya_zapiska
    ekspluatatsionnye_dokumenty/index
+   example_docs_gost19/index

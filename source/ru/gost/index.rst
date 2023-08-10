@@ -5,5 +5,5 @@
    :maxdepth: 5
    :caption: Содержание:
 
-   list_gost
+   catalog
    gost_19/index
