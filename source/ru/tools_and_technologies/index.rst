@@ -14,4 +14,5 @@
    API_tools
    autogeneration_documentation
    ai
+   converter
 
