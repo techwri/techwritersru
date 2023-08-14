@@ -13,24 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t techwritersweb .
-
-      - name: Create temp dir
-        run: mkdir -p $GITHUB_WORKSPACE/html
-
-      - name: Copy built documentation from Docker image
+      - name: Build and run Docker image
         run: |
-          CONTAINER_ID=$(docker create techwritersweb)
-          docker cp $CONTAINER_ID:/app/temp_html $GITHUB_WORKSPACE/html
-          docker rm $CONTAINER_ID
-
+          docker build -t techwritersweb .
+          docker run -v $PWD:/app techwritersweb
+      - name: Create temporary directory and copy documentation
+        run: |
+          mkdir temp_html
+          docker cp $(docker ps -q -n=1):/app/temp_html ./temp_html
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
+      - name: Show Built Documentation Path
+        run: |
+          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: /app'"
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $GITHUB_WORKSPACE/html /path/to/remote/directory"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./temp_html /path/to/remote/directory"
         env:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
