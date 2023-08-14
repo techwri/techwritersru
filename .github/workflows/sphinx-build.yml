@@ -22,7 +22,7 @@ jobs:
           docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
 
       - name: Upload to FTP
-        uses: "wftp-upload-action@v1"  # добавили кавычки здесь
+        uses: wftp-upload-action@v1
         with:
           host: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
