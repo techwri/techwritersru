@@ -20,13 +20,13 @@ RUN pip install --no-cache-dir -r requirements.txt -v 2>&1
 RUN make html 2>&1
 
 # Этап 2: Настройка веб-сервера
-# FROM nginx:alpine
+FROM nginx:alpine
 
 # Копирование собранной документации в контейнер Nginx
-# COPY --from=builder /app/build/html /usr/share/nginx/html
+COPY --from=builder /app/build/html /usr/share/nginx/html
 
 # Указываем порт для доступа к веб-серверу
-# EXPOSE 80
+EXPOSE 80
 
 # Запускаем Nginx
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
