@@ -3,7 +3,7 @@ name: Build Sphinx Documentation with Docker
 on:
   push:
     branches:
-      - develop  # Ветка для запуска workflow
+      - develop  # ветка для запуска воркфлоу
 
 jobs:
   build:
@@ -13,13 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Docker
+        uses: docker/setup-docker@v2
+
       - name: Build and run Docker image
         run: |
           docker build -t sphinx-docs .
           docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
 
       - name: Upload to FTP
-        uses: wftp-upload-action@v1
+        uses: "wftp-upload-action@v1"  # добавили кавычки здесь
         with:
           host: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
