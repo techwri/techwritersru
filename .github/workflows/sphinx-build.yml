@@ -13,24 +13,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and run Docker image
-        run: |
-          docker build -t techwritersweb .
-          docker run --name sphinx-docs -v $PWD:/app --rm=false techwritersweb
+      - name: Build Docker image
+        run: docker build -t techwritersweb .
 
-      - name: Show Built Documentation Path
+      - name: Create temp dir
+        run: mkdir -p $GITHUB_WORKSPACE/html
+
+      - name: Copy built documentation from Docker image
         run: |
-          docker exec -t sphinx-docs ls -l /app/build/html
+          CONTAINER_ID=$(docker create techwritersweb)
+          docker cp $CONTAINER_ID:/app/temp_html $GITHUB_WORKSPACE/html
+          docker rm $CONTAINER_ID
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
-      - name: Show Built Documentation Path Locally
-        run: ls -l $PWD/html
-
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $PWD/html /path/to/remote/directory"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $GITHUB_WORKSPACE/html /path/to/remote/directory"
         env:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
