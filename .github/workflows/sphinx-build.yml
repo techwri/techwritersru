@@ -21,7 +21,7 @@ jobs:
       - name: Upload to FTP server
         uses: wvbe/ftp-action@v2
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: docs/_build/html
