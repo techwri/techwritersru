@@ -18,12 +18,13 @@ jobs:
           docker build -t sphinx-docs .
           docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
 
-      - name: Upload to FTP server
-        uses: wvbe/ftp-action@v2
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          localDir: docs/_build/html
-          remoteDir: /
+      - name: Install lftp
+        run: sudo apt-get install lftp -y
 
+      - name: Upload to FTP server
+        run: |
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R docs/_build/html /path/to/remote/directory"
+        env:
+          FTP_SERVER: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
