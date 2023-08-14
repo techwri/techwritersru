@@ -3,7 +3,7 @@ name: Build Sphinx Documentation with Docker
 on:
   push:
     branches:
-      - develop  # Замените на вашу основную ветку
+      - develop  # Ветка для запуска workflow
 
 jobs:
   build:
