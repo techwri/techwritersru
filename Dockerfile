@@ -19,10 +19,8 @@ RUN pip install --no-cache-dir -r requirements.txt -v 2>&1
 # Соберите HTML документацию и перенаправьте вывод в stdout (параметр 2>&1)
 RUN make html 2>&1
 
-# Для CI/CD Копируем собранную документацию во временную папку внутри контейнера
-RUN cp -r /app/build/html /app/temp_html
-
-LABEL built_docs_path="/app/temp_html" # Добавляем метку для контейнера
+# Добавляем метку для контейнера
+LABEL built_docs_path="/app/build/html"
 
 # Этап 2: Настройка веб-сервера
 # FROM nginx:alpine
