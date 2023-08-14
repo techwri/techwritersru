@@ -16,22 +16,20 @@ jobs:
       - name: Build and run Docker image
         run: |
           docker build -t techwritersweb .
-          CONTAINER_ID=$(docker run -d -v $PWD:/app techwritersweb)
-          DOCS_PATH=$(docker inspect -f '{{index .Config.Labels "built_docs_path"}}' $CONTAINER_ID)
-          docker cp $CONTAINER_ID:$DOCS_PATH $GITHUB_WORKSPACE/built_docs
-          docker stop $CONTAINER_ID
+          docker run --name sphinx-docs -v $PWD:/app techwritersweb
+          docker cp sphinx-docs:/app/build/html $PWD
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
       - name: Show Built Documentation Path
-        run: ls -l $GITHUB_WORKSPACE/built_docs
+        run: |
+          ls -l $PWD/html
 
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $GITHUB_WORKSPACE/built_docs /path/to/remote/directory"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $PWD/html /path/to/remote/directory"
         env:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-
