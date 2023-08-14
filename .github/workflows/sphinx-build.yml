@@ -1,4 +1,4 @@
-name: Build Sphinx Documentation
+name: Build and Deploy Sphinx Documentation
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,3 +17,12 @@ jobs:
         run: |
           docker build -t sphinx-docs .
           docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
+
+      - name: Upload to FTP server
+        uses: wvbe/ftp-action@v2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: docs/_build/html
+          remoteDir: /
