@@ -23,11 +23,11 @@ jobs:
 
       - name: Show Built Documentation Path
         run: |
-          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: /app'"
+          docker run -v $PWD:/app techwritersweb /bin/sh -c "ls -l /app/build/html"
 
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R . /path/to/remote/directory"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R /app/build/html /path/to/remote/directory"
         env:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
