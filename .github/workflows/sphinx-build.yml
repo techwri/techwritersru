@@ -16,16 +16,15 @@ jobs:
       - name: Build and run Docker image
         run: |
           docker build -t sphinx-docs .
-          docker run -v $PWD/docs:/app/source sphinx-docs
+          docker run -v $PWD:/app/source sphinx-docs
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $BUILDDIR/html /path/to/remote/directory"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R /app/source/build/html /path/to/remote/directory"
         env:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          BUILDDIR: build # Замените на имя переменной из вашего Makefile для директории сборки
