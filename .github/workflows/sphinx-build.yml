@@ -1,32 +1,31 @@
 name: Build and Deploy Sphinx Documentation
 
 on:
-  push: # Реагируем на пуш в репозиторий
+  push:
     branches:
-      - develop # Только для ветки "develop"
+      - develop
 
 jobs:
-  build_and_deploy: # Задание (job) для сборки и деплоя
-    runs-on: ubuntu-latest # Используем операционную систему Ubuntu
+  build_and_deploy:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2 # Используем действие для клонирования репозитория
+        uses: actions/checkout@v2
 
       - name: Build and run Docker image
         run: |
-          docker build -t sphinx-docs . # Собираем Docker-образ с тегом "sphinx-docs"
+          docker build -t sphinx-docs .
           docker run -v $PWD/docs:/app/source sphinx-docs
-          # Запускаем Docker контейнер, монтируя директорию 'docs' внутрь контейнера
 
       - name: Install lftp
-        run: sudo apt-get install lftp -y # Устанавливаем lftp через команду apt-get
+        run: sudo apt-get install lftp -y
 
       - name: Upload to FTP server
         run: |
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R docs/build/html /path/to/remote/directory"
-          # Загружаем файлы на FTP сервер с помощью lftp
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R $BUILDDIR/html /path/to/remote/directory"
         env:
-          FTP_SERVER: ${{ secrets.FTP_HTTP }} # Получаем секрет FTP сервера
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # Получаем секрет FTP имени пользователя
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} # Получаем секрет FTP пароля
+          FTP_SERVER: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          BUILDDIR: build # Замените на имя переменной из вашего Makefile для директории сборки
