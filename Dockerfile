@@ -1,32 +1,34 @@
-# Этап 1: Соберите HTML документацию
-FROM python:3.8 as builder
+name: Build and Deploy Sphinx Documentation
 
-# Переменная окружения PYTHONUNBUFFERED, чтобы вывод был немедленно показан в консоли
-ENV PYTHONUNBUFFERED=1
+on:
+  push:
+    branches:
+      - develop
 
-# Установка системных зависимостей (graphviz и Java Runtime Environment)
-RUN apt-get update && apt-get install -y graphviz default-jre
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
 
-WORKDIR /app
-COPY . /app
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-# Копируем plantuml.jar в контейнер
-COPY plantuml.jar /app/plantuml.jar
+      - name: Build and run Docker image
+        run: |
+          docker build -t techwritersweb .
+          docker run -v $PWD:/app techwritersweb
 
-# Установите зависимости из файла requirements.txt и перенаправьте вывод в stdout (параметр 2>&1)
-RUN pip install --no-cache-dir -r requirements.txt -v 2>&1
+      - name: Install lftp
+        run: sudo apt-get install lftp -y
 
-# Соберите HTML документацию и перенаправьте вывод в stdout (параметр 2>&1)
-RUN make html 2>&1
+      - name: Show Built Documentation Path
+        run: |
+          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: /app/build/html'"
 
-# Этап 2: Настройка веб-сервера
-# FROM nginx:alpine
-
-# Копирование собранной документации в контейнер Nginx
-# COPY --from=builder /app/build/html /usr/share/nginx/html
-
-# Указываем порт для доступа к веб-серверу
-# EXPOSE 80
-
-# Запускаем Nginx
-# CMD ["nginx", "-g", "daemon off;"]
+      - name: Upload to FTP server
+        run: |
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R /app/build/html /path/to/remote/directory"
+        env:
+          FTP_SERVER: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}

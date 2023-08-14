@@ -23,7 +23,7 @@ jobs:
 
       - name: Show Built Documentation Path
         run: |
-          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: /app'"
+          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: /app/build/html'"
 
       - name: Upload to FTP server
         run: |
