@@ -23,7 +23,7 @@ jobs:
 
       - name: Show Built Documentation Path
         run: |
-          docker run -v $PWD:/app techwritersweb /bin/sh -c "ls -l /app/build/html"
+          docker run -v $PWD:/app techwritersweb /bin/sh -c "ls -l /app"
 
       - name: Upload to FTP server
         run: |
