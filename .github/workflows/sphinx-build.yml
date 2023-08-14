@@ -16,15 +16,17 @@ jobs:
       - name: Build and run Docker image
         run: |
           docker build -t techwritersweb .
-          docker run --name sphinx-docs -v $PWD:/app techwritersweb
+          docker run --name sphinx-docs -v $PWD:/app --rm=false techwritersweb
+
+      - name: Show Built Documentation Path
+        run: |
           docker exec -t sphinx-docs ls -l /app/build/html
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
-      - name: Show Built Documentation Path
-        run: |
-          ls -l $PWD/html
+      - name: Show Built Documentation Path Locally
+        run: ls -l $PWD/html
 
       - name: Upload to FTP server
         run: |
