@@ -15,8 +15,8 @@ jobs:
 
       - name: Build and run Docker image
         run: |
-          docker build -t sphinx-docs .
-          docker run -v $PWD:/app/source sphinx-docs
+          docker build -t techwritersweb .
+          docker run -v $PWD:/app/source techwritersweb
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
