@@ -17,7 +17,7 @@ jobs:
         run: |
           docker build -t techwritersweb .
           docker run --name sphinx-docs -v $PWD:/app techwritersweb
-          docker exec -it sphinx-docs ls -l /app/build/html
+          docker exec -t sphinx-docs ls -l /app/build/html
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
