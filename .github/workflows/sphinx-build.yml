@@ -1,0 +1,28 @@
+name: Build Sphinx Documentation with Docker
+
+on:
+  push:
+    branches:
+      - develop  # Замените на вашу основную ветку
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and run Docker image
+        run: |
+          docker build -t sphinx-docs .
+          docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
+
+      - name: Upload to FTP
+        uses: wftp-upload-action@v1
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: source/_build/html  # Путь к сгенерированной документации
+          remote-dir: /  # Путь на FTP сервере
