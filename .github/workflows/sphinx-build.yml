@@ -16,7 +16,6 @@ jobs:
       - name: Build and run Docker image
         run: |
           docker build -t techwritersweb .
-          docker run -v $PWD:/app techwritersweb
 
       - name: Check documentation files
         run: |
