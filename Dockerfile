@@ -25,7 +25,7 @@ RUN ls /app/build/html
 RUN mkdir /app/temp_html
 RUN cp -r /app/build/html /app/temp_html/
 
-# Этап 2: Настройка веб-сервера
+# Этап 2: Настройка локального веб-сервера
 # FROM nginx:alpine
 
 # Копирование собранной документации из временной папки в контейнер Nginx
