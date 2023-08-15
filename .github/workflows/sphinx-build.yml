@@ -13,9 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and run Docker image
-        run: |
-          docker build -t techwritersweb .
+      - name: Build Docker image
+        run: make build
+
+      - name: Run Docker image
+        run: make run
 
       - name: Check documentation files
         run: |
