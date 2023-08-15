@@ -21,8 +21,7 @@ jobs:
       - name: Copy built documentation to temporary directory
         run: |
           mkdir temp_html
-          find /app/build/html -mindepth 1 -maxdepth 1 -exec cp -r {} temp_html/ \;
-
+          cp -r /app/temp_html/* temp_html/
       - name: List files in temp_html
         run: ls -A temp_html
 
