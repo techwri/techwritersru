@@ -32,7 +32,7 @@ RUN ls -A /app/temp_html
 # FROM nginx:alpine
 
 # Копирование собранной документации из временной папки в контейнер Nginx
-# COPY --from=builder /app/temp_html /usr/share/nginx/html
+# COPY --from=builder /app/build/html /usr/share/nginx/html
 
 # Указываем порт для доступа к веб-серверу
 # EXPOSE 80
