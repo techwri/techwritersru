@@ -20,4 +20,4 @@ jobs:
 
       - name: Check documentation files
         run: |
-          ls -A $PWD/temp_html
+          ls -A /app/temp_html
