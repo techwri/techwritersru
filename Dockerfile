@@ -19,6 +19,8 @@ RUN pip install --no-cache-dir -r requirements.txt -v 2>&1
 # Соберите HTML документацию и перенаправьте вывод в stdout (параметр 2>&1)
 RUN make html 2>&1
 
+RUN ls /app/build/html
+
 # Копируем сгенерированную документацию в отдельную директорию
 RUN mkdir /app/temp_html
 RUN cp -r /app/build/html /app/temp_html/
