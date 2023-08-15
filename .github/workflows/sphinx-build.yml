@@ -1,4 +1,3 @@
-
 name: Build and Deploy Sphinx Documentation
 
 on:
@@ -23,8 +22,8 @@ jobs:
 
       - name: Copy built documentation to temporary directory
         run: |
-          if [ -d "temp_html" ] && [ -n "$(ls -A temp_html)" ]; then
-            cp -r temp_html/* .
+          if [ -d "/app/build/html" ] && [ -n "$(ls -A /app/build/html)" ]; then
+            cp -r /app/build/html/* /app/temp_html/
           fi
       - name: List files in temp_html
         run: ls -A temp_html
