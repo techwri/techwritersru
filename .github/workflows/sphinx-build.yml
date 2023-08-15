@@ -16,8 +16,10 @@ jobs:
       - name: Build Docker image
         run: docker build -t static-sphinx-site .
 
-      - name: Extract artifacts
-        run: docker run --rm -v $PWD:/app static-sphinx-site tar -xzvf /app/artifacts.tar.gz -C /app/export
+      - name: Extract artifacts from container
+        run: |
+          docker run --rm -v $PWD:/app static-sphinx-site tar -czvf /app/artifacts.tar.gz -C /app/export
+          docker cp $(docker ps -alq):/app/artifacts.tar.gz .
 
       - name: Upload artifacts to server
         run: |
