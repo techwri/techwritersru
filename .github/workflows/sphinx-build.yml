@@ -16,13 +16,12 @@ jobs:
       - name: Build Docker image
         run: make build
 
-      - name: RUN
-        run: make run
-
       - name: Check documentation files
         run: |
           docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html
 
       - name: View contents of temp_html
-        run: docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html
+        run: |
+          docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html > temp_html_contents.txt
+          cat temp_html_contents.txt
 
