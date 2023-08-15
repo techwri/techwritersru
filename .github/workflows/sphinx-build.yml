@@ -19,4 +19,5 @@ jobs:
       - name: Check documentation files
         run: |
           DOCS_CONTENT=$(docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html)
-          echo "Documentation contents: $DOCS_CONTENT"
+          echo "$DOCS_CONTENT" > temp_html_contents.txt
+          cat temp_html_contents.txt
