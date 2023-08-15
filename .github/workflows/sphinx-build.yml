@@ -17,16 +17,20 @@ jobs:
         run: |
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
-      - name: Create temporary directory and copy documentation
-        run: |
-          mkdir temp_html
-          docker cp $(docker ps -q -n=1):$BUILT_DOCS_PATH ./temp_html
+
+      - name: Create temporary directory
+        run: mkdir temp_html
+
+      - name: Copy built documentation to temporary directory
+        run: cp -r build/html temp_html/
+
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
       - name: Show Built Documentation Path
         run: |
-          docker run -v $PWD:/app techwritersweb /bin/sh -c "echo 'Built documentation at: $BUILT_DOCS_PATH'"
+          echo "Built documentation at: /app/temp_html"
+
       - name: Upload to FTP server
         run: |
           lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./temp_html /path/to/remote/directory"
