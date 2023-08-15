@@ -23,5 +23,5 @@ sphinx_book_theme/static/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-/source/_static/
+/source/_static/ru/files/
 /techwriters.ru/
