@@ -22,7 +22,10 @@ jobs:
         run: mkdir temp_html
 
       - name: Copy built documentation to temporary directory
-        run: cp -r temp_html/* .
+        run: |
+          if [ -d "temp_html" ] && [ -n "$(ls -A temp_html)" ]; then
+            cp -r temp_html/* .
+          fi
 
       - name: Install lftp
         run: sudo apt-get install lftp -y
