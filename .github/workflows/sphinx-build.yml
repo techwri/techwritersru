@@ -11,6 +11,11 @@ jobs:
         docker build -t techwritersweb .
         docker run -v $GITHUB_WORKSPACE:/app techwritersweb
         
-    - name: List documentation files
+    - name: Check documentation files
       run: |
-        ls $GITHUB_WORKSPACE/temp_html
+        if ls $GITHUB_WORKSPACE/temp_html/*.html 1> /dev/null 2>&1; then
+          echo "Documentation files are present"
+        else
+          echo "No documentation files found"
+          exit 1
+        fi
