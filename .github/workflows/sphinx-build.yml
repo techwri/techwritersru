@@ -20,4 +20,9 @@ jobs:
 
       - name: Check documentation files
         run: |
-          ls -A /app/temp_html
+          if [ -d "$GITHUB_WORKSPACE/temp_html" ] && [ -n "$(ls -A $GITHUB_WORKSPACE/temp_html)" ]; then
+            ls -A $GITHUB_WORKSPACE/temp_html
+          else
+            echo "No documentation files found in temp_html"
+            exit 1
+          fi
