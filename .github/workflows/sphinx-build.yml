@@ -16,8 +16,5 @@ jobs:
       - name: Build Docker image
         run: make build
 
-      - name: Check documentation files
-        run: |
-          DOCS_CONTENT=$(docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html)
-          echo "$DOCS_CONTENT" > temp_html_contents.txt
-          cat temp_html_contents.txt
+      - name: Запуск сервера
+        run: make run
