@@ -27,6 +27,9 @@ jobs:
             cp -r temp_html/* .
           fi
 
+      - name: List files in temp_html
+        run: ls -A temp_html
+
       - name: Install lftp
         run: sudo apt-get install lftp -y
 
