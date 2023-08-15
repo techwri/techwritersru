@@ -18,10 +18,5 @@ jobs:
 
       - name: Check documentation files
         run: |
-          docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html > temp_html_contents.txt
-
-      - name: Upload results
-        uses: actions/upload-artifact@v2
-        with:
-          name: temp_html_contents
-          path: temp_html_contents.txt
+          DOCS_CONTENT=$(docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html)
+          echo "Documentation contents: $DOCS_CONTENT"
