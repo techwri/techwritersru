@@ -18,6 +18,11 @@ jobs:
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
 
-      - name: List files in /app/temp_html
+      - name: Check documentation files
         run: |
-          ls -A /app/temp_html
+          if [ -d "$PWD/temp_html" ] && [ -n "$(ls -A $PWD/temp_html)" ]; then
+            ls -A $PWD/temp_html
+          else
+            echo "No documentation files found in temp_html"
+            exit 1
+          fi
