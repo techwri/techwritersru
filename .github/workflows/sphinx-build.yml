@@ -17,7 +17,7 @@ jobs:
         run: docker build -t static-sphinx-site .
 
       - name: Copy artifacts from container
-        run: docker cp $(docker ps -alq):/app/export ./artifacts
+        run: docker cp $(docker ps -lq):/app/export - > ./artifacts.tar.gz
 
       - name: Upload artifacts to server
         run: scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./artifacts/* your_username@your_server:/path/to/destination/folder
