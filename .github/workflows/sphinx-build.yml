@@ -1,11 +1,11 @@
 # Определение названия workflow
 name: Build and Deploy Sphinx Documentation
 
-# Определение триггеров для запуска workflow
+# Определение триггеров для запуска workflow (для активации указать ветку!!)
 on:
   push:
     branches:
-      - develop
+      - !!!develop!!!
 
 # Определение задачи (job) для выполнения в workflow
 jobs:
