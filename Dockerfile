@@ -25,6 +25,9 @@ RUN ls /app/build/html
 RUN mkdir /app/temp_html
 RUN cp -r /app/build/html/* /app/temp_html/
 
+# Вывод содержимого директории temp_html
+RUN ls -A /app/temp_html
+
 # Этап 2: Настройка веб-сервера
 # FROM nginx:alpine
 

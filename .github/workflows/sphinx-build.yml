@@ -17,13 +17,7 @@ jobs:
         run: |
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
-      - name: Create temporary directory
-        run: mkdir temp_html
 
-      - name: Copy built documentation to temporary directory
+      - name: List files in /app/temp_html
         run: |
-          if [ -d "/app/build/html" ] && [ -n "$(ls -A /app/build/html)" ]; then
-            cp -r /app/build/html/* /app/temp_html/
-          fi
-      - name: List files in temp_html
-        run: ls -A temp_html
+          ls -A /app/temp_html
