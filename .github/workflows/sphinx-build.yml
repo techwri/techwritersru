@@ -1,42 +1,55 @@
+# Определение названия workflow
 name: Build and Deploy Sphinx Documentation
 
+# Определение триггеров для запуска workflow
 on:
   push:
     branches:
       - develop
 
+# Определение задачи (job) для выполнения в workflow
 jobs:
   build_and_deploy:
+    # Определение операционной системы для выполнения задачи
     runs-on: ubuntu-latest
 
+    # Определение шагов (steps) для выполнения в задаче
     steps:
+      # Шаг 1: Получаем код репозитория
       - name: Checkout code
         uses: actions/checkout@v2
-
+        
+      # Шаг 2: Строим и запускаем Docker-образ
       - name: Build and run Docker image
         run: |
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
-
+        
+      # Шаг 3: Создаем временную директорию
       - name: Create temporary directory
         run: mkdir temp_html
-
+        
+      # Шаг 4: Копируем построенную документацию во временную директорию
       - name: Copy built documentation to temporary directory
         run: |
           if [ -d "temp_html" ] && [ -n "$(ls -A temp_html)" ]; then
             cp -r temp_html/* .
           fi
-
+        
+      # Шаг 5: Выводим список файлов в временной директории
       - name: List files in temp_html
         run: ls -A temp_html
-
+        
+      # Шаг 6: Устанавливаем lftp (командную утилиту для FTP)
       - name: Install lftp
         run: sudo apt-get install lftp -y
-
+        
+      # Шаг 7: Выводим путь к построенной документации
       - name: Show Built Documentation Path
         run: |
           echo "Built documentation at: /app/temp_html"
-
+        
+      # Шаг 8: Выгружаем документацию на FTP-сервер, используя lftp и секреты
       - name: Upload to FTP server
         run: |
           lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./temp_html /path/to/remote/directory"
