@@ -13,11 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t static-sphinx-site .
+      - name: Build and run Docker image
+        run: |
+          docker build -t sphinx-docs .
+          docker run -v $PWD/docs/_build/html:/app/source/_build/html sphinx-docs
+      - name: Install lftp
+        run: sudo apt-get install lftp -y
 
-      - name: Copy artifacts from container
-        run: docker cp $(docker ps -lq):/app/export - > ./artifacts.tar.gz
-
-      - name: Upload artifacts to server
-        run: scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./artifacts/* your_username@your_server:/path/to/destination/folder
+      - name: Upload to FTP server
+        run: |
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R docs/_build/html /path/to/remote/directory"
+        env:
+          FTP_SERVER: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
