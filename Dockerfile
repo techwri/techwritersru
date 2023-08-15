@@ -21,13 +21,13 @@ RUN make html 2>&1
 
 # Копируем собранную документацию в отдельную директорию
 RUN mkdir /app/temp_html
-RUN cp -r /app/build/html/* /app/temp_html/
+RUN cp -r /app /app/temp_html/
 
 # Этап 2: Настройка веб-сервера
 # FROM nginx:alpine
 
 # Копирование собранной документации в контейнер Nginx
-# COPY --from=builder /app/build/html /usr/share/nginx/html
+# COPY --from=builder /app/temp_html /usr/share/nginx/html
 
 # Указываем порт для доступа к веб-серверу
 # EXPOSE 80
