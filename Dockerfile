@@ -33,4 +33,4 @@ RUN cp -r /app/build/html /app/temp_html/
 # EXPOSE 80
 
 # Запускаем Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
