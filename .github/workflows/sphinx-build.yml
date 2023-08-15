@@ -16,9 +16,6 @@ jobs:
       - name: Build Docker image
         run: make build
 
-      - name: Run Docker image
-        run: make run
-
       - name: Check documentation files
         run: |
           if [ -d "$GITHUB_WORKSPACE/temp_html" ] && [ -n "$(ls -A $GITHUB_WORKSPACE/temp_html)" ]; then
