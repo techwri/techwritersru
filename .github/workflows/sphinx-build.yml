@@ -18,6 +18,6 @@ jobs:
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
 
-    - name: Check documentation files
-      run: |
-        ls $PWD/temp_html
+      - name: Check documentation files
+        run: |
+          ls $PWD/temp_html
