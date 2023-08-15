@@ -1,0 +1,21 @@
+name: Build and Deploy Sphinx Documentation
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and run Docker image
+        run: |
+          docker build -t techwritersweb .
+          docker run -v $PWD:/app techwritersweb
+
+
