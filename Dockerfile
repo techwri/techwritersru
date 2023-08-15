@@ -21,14 +21,24 @@ RUN make html 2>&1
 
 RUN ls /app/build/html
 
-# Этап 2: Настройка веб-сервера
-FROM nginx:alpine
 
-# Копирование собранной документации из временной папки в контейнер Nginx
-COPY --from=builder /app/build/html /usr/share/nginx/html
+# Копирование собранной документации в папку /app/export
+RUN cp -R /app/build/html /app/export
 
-# Указываем порт для доступа к веб-серверу
-EXPOSE 80
+# Создание архива артефактов
+RUN tar -czvf /app/artifacts.tar.gz -C /app/export .
 
-# Запускаем Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Этап 2: Создание контейнера для извлечения архива
+FROM alpine:latest
+
+# Установка утилиты для извлечения архива
+RUN apk --no-cache add tar
+
+# Создание папки для выгрузки артефактов
+RUN mkdir -p /app/export
+
+# Копирование архива артефактов из контейнера с документацией
+COPY --from=builder /app/artifacts.tar.gz /app/
+
+# Извлечение архива артефактов
+RUN tar -xzvf /app/artifacts.tar.gz -C /app/export

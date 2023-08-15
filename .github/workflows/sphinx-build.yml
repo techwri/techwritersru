@@ -14,7 +14,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: make build
+        run: docker build -t static-sphinx-site .
 
-      - name: Запуск сервера
-        run: make run
+      - name: Extract artifacts
+        run: docker run --rm -v $PWD:/app static-sphinx-site tar -xzvf /app/artifacts.tar.gz -C /app
+
+      - name: Upload artifacts to server
+        run: |
+          scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./export/* your_username@your_server:/path/to/destination/folder
