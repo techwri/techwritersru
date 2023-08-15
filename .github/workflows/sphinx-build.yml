@@ -18,4 +18,4 @@ jobs:
 
       - name: Check documentation files
         run: |
-          docker run -v $PWD:/app alpine ls -A /app/temp_html
+          docker run -v $PWD/temp_html:/app/temp_html alpine ls -A /app/temp_html
