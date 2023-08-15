@@ -29,10 +29,10 @@ RUN cp -r /app/build/html/* /app/temp_html/
 # FROM nginx:alpine
 
 # Копирование собранной документации из временной папки в контейнер Nginx
-COPY --from=builder /app/temp_html /usr/share/nginx/html
+# COPY --from=builder /app/temp_html /usr/share/nginx/html
 
 # Указываем порт для доступа к веб-серверу
-EXPOSE 80
+# EXPOSE 80
 
 # Запускаем Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
