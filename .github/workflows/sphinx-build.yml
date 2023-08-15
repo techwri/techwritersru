@@ -17,11 +17,14 @@ jobs:
         run: |
           docker build -t techwritersweb .
           docker run -v $PWD:/app techwritersweb
+      - name: Create temporary directory
+        run: mkdir temp_html
 
       - name: Copy built documentation to temporary directory
         run: |
-          mkdir temp_html
-          cp -r /app/temp_html/* temp_html/
+          if [ -d "temp_html" ] && [ -n "$(ls -A temp_html)" ]; then
+            cp -r temp_html/* .
+          fi
       - name: List files in temp_html
         run: ls -A temp_html
 
@@ -31,7 +34,6 @@ jobs:
       - name: Show Built Documentation Path
         run: |
           echo "Built documentation at: /app/temp_html"
-
       - name: Upload to FTP server
         run: |
           lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./temp_html /path/to/remote/directory"
