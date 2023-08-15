@@ -16,11 +16,8 @@ jobs:
       - name: Build Docker image
         run: docker build -t static-sphinx-site .
 
-      - name: Extract artifacts from container
-        run: |
-          docker run --rm -v $PWD:/app static-sphinx-site tar -czvf /app/artifacts.tar.gz -C /app/export
-          docker cp $(docker ps -alq):/app/artifacts.tar.gz .
+      - name: Copy artifacts from container
+        run: docker cp $(docker ps -alq):/app/export ./artifacts
 
       - name: Upload artifacts to server
-        run: |
-          scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./export/* your_username@your_server:/path/to/destination/folder
+        run: scp -r -i ${{ secrets.SSH_PRIVATE_KEY }} ./artifacts/* your_username@your_server:/path/to/destination/folder
