@@ -7,6 +7,7 @@
    :maxdepth: 2
    :caption: Содержание:
 
+   quick_start
    style_guide
    project_structure/index
    ../../../../../CONTRIBUTING
