@@ -1,3 +1,5 @@
+# Перед включением(!!!) сборки надо указать ветку (см. branches:) и закомментировать докерфайл в части развертывания локального сервера
+
 # Определение названия workflow
 name: Build and Deploy Sphinx Documentation
 
@@ -5,7 +7,7 @@ name: Build and Deploy Sphinx Documentation
 on:
   push:
     branches:
-      - develop
+      - !!!develop!!!
 
 # Определение задачи (job) для выполнения в workflow
 jobs:
