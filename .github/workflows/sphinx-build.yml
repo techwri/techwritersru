@@ -57,3 +57,5 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+
+.. TODO: Сейчас остаются проблемы с копированием файлов из докера в папку temp_html
