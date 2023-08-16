@@ -5,7 +5,7 @@ name: Build and Deploy Sphinx Documentation
 on:
   push:
     branches:
-      - !!!develop!!!
+      - develop
 
 # Определение задачи (job) для выполнения в workflow
 jobs:
