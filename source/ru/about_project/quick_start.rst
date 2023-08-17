@@ -14,12 +14,9 @@
 
 .. code-block:: bash
 
-   git clone <URL репозитория>
-   cd <название проекта>
+   git clone https://github.com/techwri/techwritersru/tree/develop
+   cd techwritersru
 
-.. warning:: Замените `<URL репозитория>` на фактический URL вашего репозитория и `<название проекта>` на имя директории, в которой находится ваш проект.
-
-.. TODO: Заменить на действующую ссылку
 
 Шаг 2: Установка Docker
 ------------------------
