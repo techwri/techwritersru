@@ -25,3 +25,6 @@ sphinx_book_theme/static/
 
 /source/_static/
 
+# Папка с опубликованными версиями сайта
+
+/html_version/
