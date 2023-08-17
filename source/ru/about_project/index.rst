@@ -12,6 +12,7 @@
    project_structure/index
    ../../../../../CONTRIBUTING
    ../../../../../LICENSE
+   team
 
 
 

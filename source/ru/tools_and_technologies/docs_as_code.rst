@@ -247,6 +247,12 @@ Linter для Markdown
 - https://jamstack.org/generators/ - Список генераторов статических сайтов для сайтов Jamstack
 - https://starkovden.github.io/Static-site-generators.html - Варианты хостинга и развертывания статичных сайтов
 
+
+Видео
+~~~~~
+
+- https://youtu.be/bjUkCCn2VoU - Automate Python Documentation | Use Sphinx + GitHub actions to publish documentation
+
 .. TODO: добавить ссылки
 
 .. TODO: Разбить раздел на отдельные топики(Общее, Инструменты, Линтеры и тд). Отредактировать текст, добавить примеры использования и настройки, разделить на аскидок, маркдаун, сфинкс

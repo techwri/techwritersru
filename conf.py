@@ -17,7 +17,7 @@ logger.setLevel(logging.DEBUG)  # Установите нужный уровен
 
 project = 'Techwriters.ru'
 copyright = '2005-2023, Сайт технических писателей - Techwriters.ru, '
-author = 'Evgeny Zakharenko'
+author = 'Evgeny Zakharenko (info@techwriters.ru)'
 release = 'ver. 1.0'
 
 # -- General configuration ---------------------------------------------------
@@ -57,7 +57,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "announcement": "Чат технических писателей - https://t.me/twriters",
-    "extra_footer": "<div>t.me/twriters</div>",
+    "extra_footer": "Чат технических писателей - https://t.me/twriters",
     "use_sidenotes": True,   # подключение отображение блоков в тексте https://sphinx-book-theme.readthedocs.io/en/stable/content/content-blocks.html#activate-sidenotes-and-marginnotes
 }
 
