@@ -14,6 +14,12 @@
 - https://t.me/docsascode - DocOps- сообщество
 - https://t.me/asciidoctor - вопросы по asciidoctor
 
+Английский язык
+---------------
+
+- https://habr.com/en/articles/479818/ - Как оценить уровень владения английским языком
+- https://habr.com/en/articles/737132/ - Уровни английского языка: детальный разбор критериев в 2023
+
 Разное
 ------
 
