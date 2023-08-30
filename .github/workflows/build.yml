@@ -5,7 +5,7 @@ name: Build site and Deploy to FTP
 on:
   push:
     branches:
-      - develop
+      - !!!develop!!!
 
 # Описание jobs (задач) для workflow
 jobs:
@@ -40,7 +40,7 @@ jobs:
       - name: Set executable permission for plantuml.jar
         run: chmod +x ./plantuml.jar
 
-      # Шаг 6: Генерация документации (включая PlantUML)
+      # Шаг 6: Генерация документации (PlantUML не работает!!)
       - name: Build documentation
         run: |
           make html
