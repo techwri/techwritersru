@@ -6,7 +6,7 @@ __pycache__/
 
 
 # Sphinx output
-source/_build/
+/build/
 
 # Compiled files
 *.mo
@@ -28,6 +28,6 @@ sphinx_book_theme/static/
 
 /html_version/
 
-# Статичные файлы ГОСТ
-/build/html/
 
+
+/build/
