@@ -29,7 +29,7 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinxcontrib.plantuml',
 ]
-plantuml = f'java -jar ${{ github.workspace }}/plantuml.jar'   #  путь для сборки в github actions,  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml11.jar'
+plantuml = 'java -jar /app/plantuml.jar'   #  путь для сборки в github actions,  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml.jar'
 plantuml_output_format = 'png'
 
 templates_path = ['_templates']
