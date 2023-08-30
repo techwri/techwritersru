@@ -61,4 +61,8 @@ html_theme_options = {
     "use_sidenotes": True,   # подключение отображение блоков в тексте https://sphinx-book-theme.readthedocs.io/en/stable/content/content-blocks.html#activate-sidenotes-and-marginnotes
 }
 
+# Google analytics
+def setup(app):
+    app.add_js_file("google-analytics.js")
+
 
