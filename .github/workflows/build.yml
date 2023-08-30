@@ -39,3 +39,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /techwriters.ru/  # путь на FTP-сервере
           local-dir: build/html/  # Путь к сгенерированным файлам
+          exclude: '_static/ru/files/'  # !!! Исключаем папку из загрузки!!! При добавлении новых файлов включить!
