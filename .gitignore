@@ -27,3 +27,7 @@ sphinx_book_theme/static/
 # Папка с опубликованными версиями сайта
 
 /html_version/
+
+# Статичные файлы ГОСТ
+/build/html/_static/ru/files
+
