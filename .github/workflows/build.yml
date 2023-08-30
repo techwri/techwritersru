@@ -46,6 +46,12 @@ jobs:
         run: |
           curl -L -o plantuml.jar https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 
+      # Отладочный шаг для вывода информации о файле plantuml.jar
+      - name: Debug PlantUML file
+        run: |
+          ls -l ./plantuml.jar
+          file ./plantuml.jar
+
       # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
