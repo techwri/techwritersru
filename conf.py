@@ -23,13 +23,13 @@ release = 'ver. 1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+
 extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.graphviz',
     'sphinxcontrib.plantuml',
 ]
-
-plantuml = 'java -jar plantuml.jar'  #  путь для сборки в github actions,  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml11.jar'
+plantuml = f'java -jar ${{ github.workspace }}/plantuml.jar'   #  путь для сборки в github actions,  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml11.jar'
 plantuml_output_format = 'png'
 
 templates_path = ['_templates']
