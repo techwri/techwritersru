@@ -49,3 +49,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}  # Используется секрет с паролем
           server-dir: /techwriters.ru/  # Путь на FTP-сервере, куда загружать файлы
           local-dir: build/html/  # Путь к сгенерированным файлам, которые будут загружены
+
