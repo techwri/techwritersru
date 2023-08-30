@@ -3,8 +3,7 @@ __pycache__/
 *.pyc
 
 # Build output
-build/
-dist/
+
 
 # Sphinx output
 source/_build/
