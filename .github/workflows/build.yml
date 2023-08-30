@@ -24,11 +24,6 @@ jobs:
         with:
           python-version: 3.8  # версия Python 3.8
 
-      # Шаг 3: Установка Sphinx
-      - name: Install Sphinx
-        run: |
-          pip install sphinx==6.2.1  # Установка Sphinx (генератора документации)
-
       # Шаг 4: Установка зависимостей из файла requirements.txt
       - name: Install dependencies
         run: |
