@@ -35,11 +35,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
 
-      # Шаг 5: Установка Java (для PlantUML)
+      # Шаг 5: Установка Java (для JAR файлов)
       - name: Setup Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: 8  # указать версию
+        uses: actions/setup-java@v1
 
       # Шаг 6: Установка PlantUML
       - name: Install PlantUML
