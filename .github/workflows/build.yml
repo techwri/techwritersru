@@ -35,9 +35,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
 
-      # Шаг 5: Генерация документации
+      # Шаг 5: Установка Java (для PlantUML)
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 8  # указать версию
+
+      # Шаг 6: Установка PlantUML
+      - name: Install PlantUML
+        run: |
+          curl -L -o plantuml.jar https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
+
+      # Шаг 7: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
+          java -jar plantuml.jar -version  # Проверяем, что PlantUML установлен
           make html
 
       # Шаг 6: Загрузка на FTP
