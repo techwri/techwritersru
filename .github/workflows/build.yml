@@ -27,7 +27,7 @@ jobs:
       # Шаг 3: Установка Sphinx
       - name: Install Sphinx
         run: |
-          pip install sphinx==4.1.2  # Установка Sphinx (генератора документации)
+          pip install sphinx==6.2.1  # Установка Sphinx (генератора документации)
 
       # Шаг 4: Установка зависимостей из файла requirements.txt
       - name: Install dependencies
