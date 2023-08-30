@@ -30,7 +30,7 @@ extensions = [
     'sphinxcontrib.plantuml',
 ]
 
-plantuml = 'java -jar plantuml.jar' #  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml.jar'
+plantuml = 'plantuml.jar' #  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml.jar'
 plantuml_output_format = 'png'
 
 templates_path = ['_templates']
