@@ -36,6 +36,10 @@ jobs:
           ls -l ./plantuml.jar
           file ./plantuml.jar
 
+      - name: Install PlantUML
+        run: |
+          chmod +x ./plantuml.jar
+
       # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
