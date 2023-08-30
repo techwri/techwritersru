@@ -3,7 +3,7 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   deploy:
@@ -14,11 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up FTP
-        uses: wvbe/ftp-deploy-action@v2
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/html  # Путь к вашим сгенерированным файлам
-          remote-dir: /techwriters.ru  # Путь на FTP-сервере
-
+          server-dir: /  # путь на FTP-сервере
+          local-dir: _build/html  # путь к вашим сгенерированным файлам
