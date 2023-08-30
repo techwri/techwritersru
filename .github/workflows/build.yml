@@ -33,8 +33,8 @@ jobs:
       # Отладочный шаг для вывода информации о файле plantuml.jar
       - name: Debug PlantUML file
         run: |
-          ls -l ./plantuml.jar
-          file ./plantuml.jar
+          ls -l plantuml.jar
+          file plantuml.jar
 
       # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
