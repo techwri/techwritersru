@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y graphviz default-jre
 WORKDIR /app
 COPY . /app
 
-# Копируем plantuml11.jar в контейнер
-COPY plantuml11.jar /app/plantuml.jar
+# Копируем plantuml.jar в контейнер
+COPY plantuml.jar /app/plantuml.jar
 
 # Установите зависимости из файла requirements.txt и перенаправьте вывод в stdout (параметр 2>&1)
 RUN pip install --no-cache-dir -r requirements.txt -v 2>&1
