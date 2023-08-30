@@ -28,7 +28,7 @@
 Евгений Захаренко, автор проекта TechWriters.ru
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 1
    :caption: Содержание:
 
    ru/technical_writer/index
