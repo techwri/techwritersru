@@ -18,14 +18,14 @@ jobs:
         with:
           python-version: 3.8  # версия Python
 
+      - name: Install Sphinx
+        run: |
+          pip install sphinx  # Установка Sphinx
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # установка зависимостей
-
-      - name: Install Sphinx
-        run: |
-          pip install sphinx  # Установка Sphinx
 
       - name: Build documentation
         run: |
@@ -37,5 +37,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /techwriters.ru/test/  # путь на FTP-сервере
+          server-dir: /techwriters.ru/  # путь на FTP-сервере
           local-dir: build/html/  # Путь к сгенерированным файлам
