@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /  # путь на FTP-сервере
-          local-dir: ./_build/html  # путь к вашим сгенерированным файлам
+          local-dir: ./_build  # путь к вашим сгенерированным файлам
