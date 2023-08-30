@@ -35,19 +35,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
 
-      # Шаг 5: Установка Java (для JAR файлов)
-      - name: Setup Java
-        uses: actions/setup-java@v1
+      # Шаг 4: Установка зависимостей из файла requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt 
 
-      # Шаг 6: Установка PlantUML
+      # Шаг 5: Установка PlantUML
       - name: Install PlantUML
         run: |
           curl -L -o plantuml.jar https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 
-      # Шаг 7: Генерация документации (включая PlantUML)
+      # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
-          java -jar plantuml.jar -version  # Проверяем, что PlantUML установлен
+          java -Djava.awt.headless=true -jar plantuml.jar -version  # Проверяем, что PlantUML установлен
           make html
 
       # Шаг 6: Загрузка на FTP
