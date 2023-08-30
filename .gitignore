@@ -29,5 +29,5 @@ sphinx_book_theme/static/
 /html_version/
 
 # Статичные файлы ГОСТ
-/build/html/_static/ru/files
+/build/html/
 
