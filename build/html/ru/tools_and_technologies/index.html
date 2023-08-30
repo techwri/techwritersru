@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Инструменты и технологии &#8212; TechWriters.ru</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/google-analytics.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Docs as code" href="docs_as_code.html" />
+    <link rel="prev" title="Онбординг" href="../technical_writer/working_in_team/onboarding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Чат технических писателей - https://t.me/twriters</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">TechWriters.ru</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../technical_writer/index.html">Профессия</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../technical_writer/levels_technical_writer.html">Уровни</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../technical_writer/interview/index.html">Собеседование</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../technical_writer/interview/interview_process.html">Проходим собеседование</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../technical_writer/interview/tips_for_recruiters.html">Рекрутерам</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../technical_writer/career_development_guide.html">Карьерный рост</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../technical_writer/working_in_team/index.html">Работа в команде</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../technical_writer/working_in_team/onboarding.html">Онбординг</a></li>
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Инструменты и технологии</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs_as_code.html">Docs as code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microsoft_word.html">Microsoft Word</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemes_and_diagrams.html">Схемы и диаграммы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translation_and_grammar.html">Перевод и грамматика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html">Инструменты для разработки документации API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autogeneration_documentation.html">Автоматическая генерация документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai.html">Искусственный интеллект (ИИ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converter.html">Конверторы</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation_development/index.html">Разработка документации</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation_development/process_dev_doc.html">Процесс разработки документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation_development/api_documentation.html">API Документация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation_development/comment_documentation.html">Документирование комментариев</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation_development/types_documentation.html">Типы документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation_development/users_documentation_roles.html">Пользователи документации</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Обучение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../books.html">Книги для технического писателя</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../gost/index.html">ГОСТ</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gost/catalog.html">Каталог стандартов</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../gost/gost_19/index.html">ГОСТ 19</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/specification.html">Спецификация</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/vedomost_derzhateley_podlinnikov.html">Ведомость держателей подлинников</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/text_program.html">Текст программы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/opisanie_programy.html">Описание программы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/pmi.html">Программа и методика испытаний</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/tz.html">Техническое задание</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gost/gost_19/poyasnitelnaya_zapiska.html">Пояснительная записка</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/index.html">Эксплуатационные документы</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/vedomost_ekspluatatsionnykh_dokumentov.html">Ведомость эксплуатационных документов</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/formular.html">Формуляр</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/opisaniye_primeneniya.html">Описание применения</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/rukovodstvo_sistemnogo_programmista.html">Руководство системного программиста</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/rukovodstvo_programmista.html">Руководство программиста</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/rukovodstvo_operatora.html">Руководство оператора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/opisaniye_yazyka.html">Описание языка</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/ekspluatatsionnye_dokumenty/rukovodstvo_po_tekhnicheskomu_obsluzhivaniyu.html">Руководство по техническому обслуживанию</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../gost/gost_19/example_docs_gost19/index.html">А тут будут примеры</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gost/gost_19/example_docs_gost19/opisanie_programy_example.html">Описание программы (пример)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Ссылки</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about_project/index.html">О проекте</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about_project/quick_start.html">Быстрый старт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about_project/style_guide.html">Руководство по стилю</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../about_project/project_structure/index.html">Структура проекта</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about_project/project_structure/project_block_diagram.html">Структура проекта (схема)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about_project/project_structure/_includes.html">_includes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about_project/project_structure/conf.py.html">conf.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../CONTRIBUTING.html">Внесение вклада в проект</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LICENSE.html">Лицензия MIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about_project/team.html">Команда</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Глоссарий</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/techwri/techwritersweb" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/techwri/techwritersweb/blob/develop/source/ru/tools_and_technologies/index.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/techwri/techwritersweb/edit/develop/source/ru/tools_and_technologies/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/techwri/techwritersweb/issues/new?title=Issue%20on%20page%20%2Fru/tools_and_technologies/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ru/tools_and_technologies/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Инструменты и технологии</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="id1">
+<h1>Инструменты и технологии<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>В своей работе технический писатель использует различные инструменты и технологии. Вот некоторые из них:</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_as_code.html">Docs as code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs_as_code.html#id1">Общее описание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs_as_code.html#id2">Инструменты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs_as_code.html#id10">Полезные ссылки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="microsoft_word.html">Microsoft Word</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="microsoft_word.html#id1">Макросы</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schemes_and_diagrams.html">Схемы и диаграммы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemes_and_diagrams.html#id2">Общее описание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemes_and_diagrams.html#id3">Инструменты для создания схем и диаграмм</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemes_and_diagrams.html#id4">Полезные ссылки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="translation_and_grammar.html">Перевод и грамматика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="translation_and_grammar.html#id2">Сервисы перевода</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translation_and_grammar.html#id3">Сервисы орфографии и грамматики</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translation_and_grammar.html#id4">Полезные ссылки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API_tools.html">Инструменты для разработки документации API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html#swagger-openapi">1. Swagger (OpenAPI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html#postman">2. Postman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html#apiary">3. Apiary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html#readme">4. ReadMe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_tools.html#redoc">5. Redoc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autogeneration_documentation.html">Автоматическая генерация документации</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autogeneration_documentation.html#id2">Когда следует использовать?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autogeneration_documentation.html#id3">Какие инструменты использовать?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autogeneration_documentation.html#id4">Основные сложности</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ai.html">Искусственный интеллект (ИИ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ai.html#id2">Как можно применить ИИ в разработке технической документации?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai.html#id3">ИИ-инструменты для разработки документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai.html#id4">Проблемы при использовании ИИ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="converter.html">Конверторы</a></li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../technical_writer/working_in_team/onboarding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Онбординг</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="docs_as_code.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Docs as code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Evgeny Zakharenko (info@techwriters.ru)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2005-2023, Сайт технических писателей - Techwriters.ru, .
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Чат технических писателей - https://t.me/twriters
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
