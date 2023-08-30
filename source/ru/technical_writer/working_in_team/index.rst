@@ -5,4 +5,4 @@
    :maxdepth: 2
    :caption: Содержание:
 
-   first_days
+   onboarding
