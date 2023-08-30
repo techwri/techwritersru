@@ -62,6 +62,7 @@ html_theme_options = {
 
 # Google analytics
 def setup(app):
-    app.add_js_file("google-analytics.js")
+    app.add_js_file('google-analytics.js')
+
 
 
