@@ -42,7 +42,7 @@ jobs:
 
       # Шаг 6: Загрузка на FTP
       - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        uses: SamKirkland/FTP-Deploy-Action@4.2.2
         with:
           server: ${{ secrets.FTP_HOST }}  # Используется секрет с адресом FTP-сервера
           username: ${{ secrets.FTP_USERNAME }}  # Используется секрет с именем пользователя
