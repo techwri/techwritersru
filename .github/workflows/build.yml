@@ -36,11 +36,6 @@ jobs:
           ls -l ./plantuml.jar
           file ./plantuml.jar
 
-      - name: Copy PlantUML jar
-        run: |
-          cp ./plantuml.jar $GITHUB_WORKSPACE/plantuml.jar
-          chmod +x $GITHUB_WORKSPACE/plantuml.jar
-
       # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
