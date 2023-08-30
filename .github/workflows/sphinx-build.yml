@@ -19,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /techwriters.ru  # путь на FTP-сервере
-          local-dir: _build/  # путь к вашим сгенерированным файлам
+          server-dir: /techwriters.ru/  # путь на FTP-сервере
+          local-dir: _build/  # путь к сгенерированным файлам
