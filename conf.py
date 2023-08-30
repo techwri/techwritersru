@@ -12,7 +12,7 @@ import logging
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 logger.addHandler(handler)
-logger.setLevel(logging.DEBUG)  # Установите нужный уровень логирования (DEBUG, INFO, ERROR и т.д.)
+logger.setLevel(logging.DEBUG)  # нужный уровень логирования (DEBUG, INFO, ERROR и т.д.)
 
 
 project = 'Techwriters.ru'
@@ -30,7 +30,7 @@ extensions = [
     'sphinxcontrib.plantuml',
 ]
 
-plantuml = 'java -jar /app/plantuml.jar'
+plantuml = 'java -jar /plantuml.jar' #  для сборки в докере изменить на  plantuml = 'java -jar /app/plantuml.jar'
 plantuml_output_format = 'png'
 
 templates_path = ['_templates']
