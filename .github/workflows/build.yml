@@ -40,12 +40,6 @@ jobs:
         run: |
           make html
 
-      # Шаг 5: Очищаем кэш в GitHub Actions, который может сохранять кэшированные данные.
-
-      - name: Clear Cache
-        run: |
-          git clean -fdx
-
       # Шаг 6: Загрузка на FTP
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
