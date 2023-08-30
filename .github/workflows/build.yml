@@ -34,17 +34,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
+          # Установка PlantUML
+          curl -L -o plantuml.jar https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 
       # Шаг 4: Установка зависимостей из файла requirements.txt
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
-
-      # Шаг 5: Установка PlantUML
-      - name: Install PlantUML
-        run: |
-          curl -L -o plantuml.jar https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 
       # Отладочный шаг для вывода информации о файле plantuml.jar
       - name: Debug PlantUML file
