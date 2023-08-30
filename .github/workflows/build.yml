@@ -49,7 +49,7 @@ jobs:
       # Шаг 6: Генерация документации (включая PlantUML)
       - name: Build documentation
         run: |
-          java -Djava.awt.headless=true -jar plantuml.jar -version  # Проверяем, что PlantUML установлен
+          java -Djava.awt.headless=true -jar ./plantuml.jar -version  # Проверяем, что PlantUML установлен
           make html
 
       # Шаг 6: Загрузка на FTP
