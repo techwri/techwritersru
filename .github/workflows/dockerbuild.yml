@@ -18,4 +18,8 @@ jobs:
           docker build -t my-docs-builder .
           docker run -d --name docs-builder my-docs-builder
 
+      - name: Copy documentation artifacts
+        run: |
+          mkdir -p docs_artifacts
+          docker cp docs-builder:/app/build/html docs_artifacts/
 
