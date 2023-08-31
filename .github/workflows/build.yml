@@ -1,48 +1,57 @@
+# Определение workflow с именем "Build site and Deploy to FTP"
 name: Build site and Deploy to FTP
 
+# Запуск workflow при каждом push в ветку develop
 on:
   push:
     branches:
-      - develop
+      - !!!develop!!!
 
+# Описание jobs (задач) для workflow
 jobs:
   build:
+    # Запуск на последней версии Ubuntu
     runs-on: ubuntu-latest
 
     steps:
+      # Шаг 1: Клонирование репозитория
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Шаг 2: Установка версии Python 3.8
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.8  # версия Python 3.8
 
-      - name: Install Sphinx
-        run: |
-          pip install sphinx
-
+      # Шаг 4: Установка зависимостей из файла requirements.txt
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt 
 
+      # Отладочный шаг для вывода информации о файле plantuml.jar
       - name: Debug PlantUML file
         run: |
-          ls -l ./plantuml.jar
-          file ./plantuml.jar
+          ls -l plantuml.jar
+          file plantuml.jar
 
+      # Предоставляем исполнительные права файлу plantuml.jar
       - name: Set executable permission for plantuml.jar
         run: chmod +x ./plantuml.jar
 
-      - name: Generate PlantUML diagrams
-        id: generate_plantuml
-        uses: grassedge/generate-plantuml-action@v1.5
-        with:
-          path: .  # Указывает на текущую директорию для поиска .rst файлов с диаграммами
-          message: "Render PlantUML files"
-
+      # Шаг 6: Генерация документации (PlantUML не работает!!)
       - name: Build documentation
         run: |
           make html
+
+      # Шаг 6: Загрузка на FTP
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_HOST }}  # Используется секрет с адресом FTP-сервера
+          username: ${{ secrets.FTP_USERNAME }}  # Используется секрет с именем пользователя
+          password: ${{ secrets.FTP_PASSWORD }}  # Используется секрет с паролем
+          server-dir: /techwriters.ru/  # Путь на FTP-сервере, куда загружать файлы
+          local-dir: build/html/  # Путь к сгенерированным файлам, которые будут загружены
 

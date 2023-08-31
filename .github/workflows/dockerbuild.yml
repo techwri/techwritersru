@@ -1,0 +1,25 @@
+name: CI/CD with Docker
+
+on:
+  push:
+    branches:
+      - develop  # Можно указать нужную вам ветку
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Используем Ubuntu для выполнения задач
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Шаг для клонирования репозитория
+
+      - name: Build and Deploy
+        run: |
+          docker build -t my-docs-builder .
+          docker run -d --name docs-builder my-docs-builder
+          docker cp docs-builder:/app/build/html ./deploy
+          docker stop docs-builder
+          docker rm docs-builder
+          # В этом шаге мы собираем Docker-контейнер, запускаем его, копируем собранную документацию и завершаем контейнер
+
+

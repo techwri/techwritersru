@@ -7,12 +7,17 @@
 Ссылки
 ======
 
+(присылайте новые ссылки на интересные чаты и ресурсы)
+
 Общение
 -------
 
 - https://t.me/twriters - чат технических писателей
-- https://t.me/docsascode - DocOps- сообщество
-- https://t.me/asciidoctor - вопросы по asciidoctor
+- https://t.me/technicalwriters - чат технических писателей
+- https://t.me/docsascode - DocOps - сообщество (про автоматизацию разработки документации
+- https://t.me/asciidoctor - вопросы по Asciidoctor
+- https://t.me/foliantdocs - вопросы по Foliant
+- https://t.me/the_know_all - канал об управлении знаниями в IT-командах
 
 Английский язык
 ---------------
