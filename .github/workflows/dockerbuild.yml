@@ -27,12 +27,15 @@ jobs:
         run: |
           ls -R docs_artifacts
 
-      - name: Commit and push documentation artifacts
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add docs_artifacts
-          git commit -m "Add documentation artifacts"
-          git push origin ${{ github.ref }}
+      # Шаг 6: Загрузка на FTP
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_HOST }}  # Используется секрет с адресом FTP-сервера
+          username: ${{ secrets.FTP_USERNAME }}  # Используется секрет с именем пользователя
+          password: ${{ secrets.FTP_PASSWORD }}  # Используется секрет с паролем
+          server-dir: /techwriters.ru/test1  # Путь на FTP-сервере, куда загружать файлы
+          local-dir: docs_artifacts  # Путь к сгенерированным файлам, которые будут загружены
+
 
 
