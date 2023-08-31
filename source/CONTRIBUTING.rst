@@ -105,3 +105,15 @@
 
 .. note::
    Важно следовать указаниям и рекомендациям владельца проекта для внесения вклада.
+
+Инструкция по загрузке изменений в ветку master
+-----------------------------------------------
+
+   .. code-block:: bash
+
+      git checkout develop  # Переключение на ветку develop
+      git pull origin develop  # Получение последних изменений из репозитория
+      git checkout master  # Переключение на ветку master
+      git merge develop  # Слияние изменений из ветки develop в ветку master
+      git push origin master  # Загрузка изменений в ветку master
+
