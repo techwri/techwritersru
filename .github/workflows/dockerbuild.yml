@@ -17,9 +17,5 @@ jobs:
         run: |
           docker build -t my-docs-builder .
           docker run -d --name docs-builder my-docs-builder
-          docker cp docs-builder:/app/build/html ./deploy
-          docker stop docs-builder
-          docker rm docs-builder
-          # В этом шаге мы собираем Docker-контейнер, запускаем его, копируем собранную документацию и завершаем контейнер
 
 
