@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2  # Шаг для клонирования репозитория
 
-      - name: Build and Deploy
+      - name: Build Docker
         run: |
           docker build -t my-docs-builder .
           docker run -d --name docs-builder my-docs-builder
