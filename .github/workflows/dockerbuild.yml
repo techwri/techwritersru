@@ -23,3 +23,7 @@ jobs:
           mkdir -p docs_artifacts
           docker cp docs-builder:/app/build/html docs_artifacts/
 
+      - name: List documentation artifacts
+        run: |
+          ls -R docs_artifacts
+
