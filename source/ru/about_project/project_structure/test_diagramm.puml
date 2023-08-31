@@ -1,11 +1,3 @@
-Структура проекта (схема)
-=========================
-
-схема тут
-
-plantuml:test_diagramm.pml
-
-заканчивается
 
 .. uml::
 
@@ -39,8 +31,4 @@ plantuml:test_diagramm.pml
     ** requirements.txt
     @endmindmap
 
-Ссылки на документацию:
-
-- :doc:`_includes`
-- :doc:`conf.py`
 
