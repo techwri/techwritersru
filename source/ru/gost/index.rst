@@ -2,7 +2,7 @@
 ====
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 1
    :caption: Содержание:
 
    catalog

@@ -14,7 +14,7 @@
 
 - https://t.me/twriters - чат технических писателей
 - https://t.me/technicalwriters - чат технических писателей
-- https://t.me/docsascode - DocOps - сообщество (про автоматизацию разработки документации
+- https://t.me/docsascode - DocOps - сообщество (много интересного про автоматизацию разработки документации)
 - https://t.me/asciidoctor - вопросы по Asciidoctor
 - https://t.me/foliantdocs - вопросы по Foliant
 - https://t.me/the_know_all - канал об управлении знаниями в IT-командах
@@ -29,4 +29,4 @@
 ------
 
 - Нормы на разработку АСУП (http://it-gost.ru/content/view/67/41)
-- Методы оценки трудозатрат и сроков документирования (компапния "Философт" презентация) https://yadi.sk/i/IP59lDEeiyLFnw
+- Методы оценки трудозатрат и сроков документирования (компания "Философт" презентация) https://yadi.sk/i/IP59lDEeiyLFnw
