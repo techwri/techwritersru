@@ -1,7 +1,7 @@
 # Установка зависимостей для сборки документации
 
 sphinx==6.2.1
-sphinx-book-theme
-sphinx-tabs
-sphinxcontrib-plantuml
-sphinxcontrib-googleanalytics
+sphinx-book-theme==1.0.1
+sphinx-tabs==3.4.1
+sphinxcontrib-plantuml==0.26
+sphinxcontrib-googleanalytics==0.4
