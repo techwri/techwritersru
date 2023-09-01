@@ -4,4 +4,4 @@ sphinx==6.2.1
 sphinx-book-theme
 sphinx-tabs
 sphinxcontrib-plantuml
-
+sphinxcontrib-googleanalytics
