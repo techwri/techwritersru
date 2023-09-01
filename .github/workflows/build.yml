@@ -1,3 +1,5 @@
+# Сборка отключена!! Эта сборка генерирует документацию без докера, сейчас в ней не работает генерация диаграмм plantuml
+
 # Определение workflow с именем "Build site and Deploy to FTP"
 name: Build site and Deploy to FTP
 
