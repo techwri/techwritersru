@@ -3,7 +3,7 @@ name: CI/CD with Docker
 on:
   push:
     branches:
-      - develop  # Ветка для запуска workflow
+      - master  # Ветка для запуска workflow
 
 jobs:
   build-and-deploy:
