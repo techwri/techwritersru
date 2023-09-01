@@ -6,7 +6,7 @@
 Шаг 1: Форк проекта
 -------------------
 
-Перейдите на страницу проекта на GitHub: https://github.com/techwri/techwritersweb
+Перейдите на страницу проекта на GitHub: https://github.com/techwri/techwritersru
 В правом верхнем углу нажмите кнопку "Fork". Это создаст копию проекта у вас в аккаунте.
 
 
@@ -20,7 +20,7 @@
 
    .. code-block:: bash
 
-      git clone https://github.com/techwri/techwritersweb.git
+      git clone https://github.com/techwri/techwritersru.git
       git checkout -b develop
 
 Шаг 3: Создание и переключение на ветку
