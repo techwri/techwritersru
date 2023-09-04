@@ -29,3 +29,5 @@
 ---------------
 
 - https://plantuml.com/
+- Интеграция plantuml в Git https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/doc/administration/integration/plantuml.md
+
