@@ -15,7 +15,7 @@ Technical Writing Fundamentals (Курс по документированию A
 
 **язык**: русский
 
-Курс по документированию API. Вольный перевод курса Documenting APIs: a guide for technical writers, составленного Томом Джонсоном, техническим писателем Amazon.
+Курс по документированию API. Вольный перевод курса "Documenting APIs: A guide for technical writers" (автор: Tom Johnson, Senior Technical Writer at Google).
 
 Ссылка: https://starkovden.github.io/index.html
 
