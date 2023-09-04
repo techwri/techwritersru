@@ -28,7 +28,7 @@
 
    .. code-block:: bash
 
-      cd techwritersweb
+      cd techwritersru
 
 2. Создайте новую ветку для ваших изменений:
 
