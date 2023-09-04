@@ -115,7 +115,7 @@
       git checkout develop  # Переключение на ветку develop
       git pull origin develop  # Получение последних изменений из репозитория
       git checkout master  # Переключение на ветку master
-      git merge develop  # Слияние изменений из ветки develop в ветку master
+      git merge -m "ваш комментарий" develop # Слияние изменений из ветки develop в ветку master
       git push origin master  # Загрузка изменений в ветку master
 
 Как принять Pull request
