@@ -112,8 +112,6 @@
 
    .. code-block:: bash
 
-      git checkout master  # Переключение на ветку master
-      git pull origin master  # Получение последних изменений из репозитория
       git checkout develop  # Переключение на ветку develop
       git pull origin develop  # Получение последних изменений из репозитория
       git checkout master  # Переключение на ветку master
