@@ -8,7 +8,6 @@
    :caption: Содержание:
 
    quick_start
-   git
    style_guide
    project_structure/index
    ../../../../../CONTRIBUTING
