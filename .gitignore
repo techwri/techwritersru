@@ -2,9 +2,6 @@
 __pycache__/
 *.pyc
 
-# Build output
-
-
 # Sphinx output
 /build/
 
