@@ -22,13 +22,9 @@ sphinx_book_theme/static/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-/source/_static/
-
 # Папка с опубликованными версиями сайта
 
 /html_version/
 
-
-
 /build/
-/source/_static/ru/files/gost/
+
