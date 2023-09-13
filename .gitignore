@@ -5,6 +5,9 @@ __pycache__/
 # Sphinx output
 /build/
 
+# Папка с опубликованными версиями сайта
+/html_version/
+
 # Compiled files
 *.mo
 *.pot
@@ -19,9 +22,4 @@ sphinx_book_theme/static/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Папка с опубликованными версиями сайта
-
-/html_version/
-
-/build/
 
