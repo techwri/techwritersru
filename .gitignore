@@ -23,3 +23,5 @@ sphinx_book_theme/static/
 .ipynb_checkpoints/
 
 
+# IDEA
+.idea/
