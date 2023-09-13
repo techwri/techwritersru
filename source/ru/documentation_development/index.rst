@@ -11,3 +11,4 @@
    comment_documentation
    types_documentation
    users_documentation_roles
+   functional_requirements
