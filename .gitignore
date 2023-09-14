@@ -2,33 +2,15 @@
 __pycache__/
 *.pyc
 
-# Build output
-
-
 # Sphinx output
 /build/
 
-# Compiled files
-*.mo
-*.pot
-
-# Cache and logs
-*.cache
-*.log
-
-# Sphinx Book Theme
-sphinx_book_theme/static/
+# Папка с опубликованными версиями сайта
+/html_version/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-/source/_static/
 
-# Папка с опубликованными версиями сайта
-
-/html_version/
-
-
-
-/build/
-/source/_static/ru/files/gost/
+# IDEA
+.idea/
