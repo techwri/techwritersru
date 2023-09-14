@@ -7,6 +7,7 @@
    :maxdepth: 1
    :caption: Содержание:
 
+   technologies_used_in_the_project
    quick_start
    style_guide
    project_structure/index
