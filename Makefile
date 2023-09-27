@@ -2,30 +2,37 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
-SPHINXOPTS    ?= -c .
+SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
+IMAGE         = techwriters
+DOCKER_BUILD  = docker run --rm --volume $(shell pwd):/docs $(IMAGE)
 
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile build run clean
+.PHONY: help Makefile
 
-# Добавленное правило для сборки HTML документации
-html:
-	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+%: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-# Добавленное правило для сборки Docker-образа
-build:
-	docker build -t "$(shell basename "$(CURDIR)" | tr '[:upper:]' '[:lower:]')" .
+# Build Docker image
+docker-build:
+	docker build-image \
+		--tag techwriters \
+		.
 
-# Добавленное правило для запуска контейнера
-run:
-	docker run -d -p 8000:80 --name "$(shell basename "$(CURDIR)" | tr '[:upper:]' '[:lower:]')" "$(shell basename "$(CURDIR)" | tr '[:upper:]' '[:lower:]')"
+docker-build-dirhtml:
+	$(DOCKER_BUILD) make dirhtml
 
-# Добавленное правило для остановки и удаления контейнера
-clean:
-	docker stop "$(shell basename "$(CURDIR)" | tr '[:upper:]' '[:lower:]')"
-	docker rm "$(shell basename "$(CURDIR)" | tr '[:upper:]' '[:lower:]')"
+docker-build-html:
+	$(DOCKER_BUILD) make html
+
+docker-build-linkcheck:
+	$(DOCKER_BUILD) make linkcheck
+
+
+server:
+	python3 -m http.server -d build/html -b 127.0.0.1 8080
