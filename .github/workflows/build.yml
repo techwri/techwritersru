@@ -1,3 +1,4 @@
+---
 # Сборка отключена!! Эта сборка генерирует документацию без докера, сейчас в ней не работает генерация диаграмм plantuml
 
 # Определение workflow с именем "Build site and Deploy to FTP"
@@ -9,45 +10,29 @@ on:
     branches:
       - !!!develop!!!
 
-# Описание jobs (задач) для workflow
 jobs:
   build:
-    # Запуск на последней версии Ubuntu
-    runs-on: ubuntu-latest
+    runs-on: sphinxdoc/sphinx:6.2.1
 
     steps:
       # Шаг 1: Клонирование репозитория
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Шаг 2: Установка версии Python 3.8
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8  # версия Python 3.8
+      # Шаг 2: Установка недостающих plantuml и graphviz
+      - name: Install APT packages
+        run: |
+          sudo apt update && sudo apt install graphviz default-jre plantuml --yes
 
-      # Шаг 4: Установка зависимостей из файла requirements.txt
+      # Шаг 3: Установка зависимостей из файла requirements.txt
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt 
+        run: pip install -r requirements.txt
 
-      # Отладочный шаг для вывода информации о файле plantuml.jar
-      - name: Debug PlantUML file
-        run: |
-          ls -l plantuml.jar
-          file plantuml.jar
-
-      # Предоставляем исполнительные права файлу plantuml.jar
-      - name: Set executable permission for plantuml.jar
-        run: chmod +x ./plantuml.jar
-
-      # Шаг 6: Генерация документации (PlantUML не работает!!)
+      # Шаг 4: Генерация документации
       - name: Build documentation
-        run: |
-          make html
+        run: make html
 
-      # Шаг 6: Загрузка на FTP
+      # Шаг 5: Загрузка на FTP
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:

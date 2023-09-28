@@ -1,3 +1,4 @@
+---
 name: CI/CD with Docker
 
 on:
@@ -7,7 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # Используем Ubuntu для выполнения задач
+    runs-on: sphinxdoc/sphinx:6.2.1
 
     steps:
       - name: Checkout repository
@@ -15,13 +16,13 @@ jobs:
 
       - name: Build Docker
         run: |
-          docker build -t my-docs-builder .
-          docker run -d --name docs-builder my-docs-builder
+          docker build --tag techwriters .
+          docker run -d --name docs-builder techwriters
 
       - name: Copy documentation artifacts
         run: |
           mkdir -p docs_artifacts
-          docker cp docs-builder:/app/build/html docs_artifacts/
+          docker cp docs-builder:/docs/build/html docs_artifacts/
 
       - name: List documentation artifacts
         run: |
@@ -36,6 +37,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}  # Используется секрет с паролем
           server-dir: /techwriters.ru/ # Путь на FTP-сервере, куда загружать файлы
           local-dir: docs_artifacts/html/  # Путь к сгенерированным файлам, которые будут загружены
-
-
-
