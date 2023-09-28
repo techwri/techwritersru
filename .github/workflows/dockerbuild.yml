@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: sphinxdoc/sphinx:6.2.1
+    runs-on: sphinxdoc/sphinx
 
     steps:
       - name: Checkout repository
