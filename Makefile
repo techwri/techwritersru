@@ -19,10 +19,8 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Build Docker image
-docker-build:
-	docker build-image \
-		--tag techwriters \
-		.
+docker-build-image:
+	docker build --tag techwriters .
 
 docker-build-dirhtml:
 	$(DOCKER_BUILD) make dirhtml

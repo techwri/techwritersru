@@ -22,7 +22,7 @@ jobs:
       # Шаг 2: Установка недостающих plantuml и graphviz
       - name: Install APT packages
         run: |
-          sudo apt update && sudo apt install graphviz default-jre plantuml --yes
+          sudo apt update && sudo apt install graphviz plantuml --yes --no-install-recommends
 
       # Шаг 3: Установка зависимостей из файла requirements.txt
       - name: Install dependencies

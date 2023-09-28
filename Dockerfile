@@ -1,11 +1,11 @@
 # Этап 1: Соберите HTML документацию
-FROM sphinxdoc/sphinx
+FROM sphinxdoc/sphinx:6.2.1
 
 # Переменная окружения PYTHONUNBUFFERED, чтобы вывод был немедленно показан в консоли
 ENV PYTHONUNBUFFERED=1
 
 # Установка системных зависимостей
-RUN apt-get update && apt-get install -y graphviz default-jre plantuml
+RUN apt-get update && apt-get install graphviz plantuml --yes --no-install-recommends
 
 WORKDIR /docs
 COPY . /docs
