@@ -1,0 +1,31 @@
+---
+name: testing
+on:
+  - push
+  - pull_request
+jobs:
+  testing:
+    name: testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Update PIP and install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip3 install -r requirements.txt
+
+      - name: Install make, graphviz and JRE
+        run: |
+          sudo apt-get update
+          sudo apt-get install make graphviz default-jre --yes --no-install-recommends
+
+      - name: Buils Sphinx project
+        run: make dirhtml
+
+      - name: Validate links
+        run: make linkcheck

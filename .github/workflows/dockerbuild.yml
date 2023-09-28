@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Шаг для клонирования репозитория
+        uses: actions/checkout@v4  # Шаг для клонирования репозитория
 
       - name: Build Docker
         run: |
