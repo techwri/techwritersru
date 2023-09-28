@@ -31,3 +31,5 @@
 - Блог Eric Holscher является соучредителем Read the Docs, Write the Docs и EthicalAds (https://www.ericholscher.com/)
 - Нормы на разработку АСУП (http://it-gost.ru/content/view/67/41)
 - Методы оценки трудозатрат и сроков документирования (презентация компании «Философт») https://yadi.sk/i/IP59lDEeiyLFnw
+- Сравнение PDF-файлов (https://tools.pdf24.org/ru/compare-pdf)
+- https://docs.cntd.ru -- Электронный фонд правовой и нормативно-технической документации
