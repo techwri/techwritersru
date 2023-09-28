@@ -1,5 +1,5 @@
 # Этап 1: Соберите HTML документацию
-FROM sphinxdoc/sphinx:6.2.1
+FROM sphinxdoc/sphinx
 
 # Переменная окружения PYTHONUNBUFFERED, чтобы вывод был немедленно показан в консоли
 ENV PYTHONUNBUFFERED=1
