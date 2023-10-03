@@ -7,7 +7,7 @@ name: Build site and Deploy to FTP
 on:
   push:
     branches:
-      - master
+      - !!!master!!!
 
 # Описание jobs (задач) для workflow
 jobs:
