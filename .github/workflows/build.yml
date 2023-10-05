@@ -8,7 +8,7 @@ name: Build site and Deploy to FTP
 on:
   push:
     branches:
-      - !!!develop!!!
+      - develop
 
 jobs:
   build:
