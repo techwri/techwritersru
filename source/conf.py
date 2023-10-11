@@ -57,8 +57,26 @@ html_theme_options = {
     "use_issues_button": True,
     "announcement": "Чат технических писателей - https://t.me/twriters",
     "extra_footer": "Чат технических писателей - https://t.me/twriters",
-    "use_sidenotes": True, # подключение отображение блоков в тексте https://sphinx-book-theme.readthedocs.io/en/stable/content/content-blocks.html#activate-sidenotes-and-marginnotes
+    "use_sidenotes": True,  # подключение отображение блоков в тексте https://sphinx-book-theme.readthedocs.io/en/stable/content/content-blocks.html#activate-sidenotes-and-marginnotes
 }
 
 # Google analytics
 googleanalytics_id = "G-XTLRDH4VHT"
+
+# Параметры проверки ссылок)
+linkcheck_ignore = [
+    r"http://127.0.0.1:\d+/",
+    r"https://apiary\.io/",
+    r"https://linkedin\.com/",
+    r"https://www\.linkedin\.com",
+    r"https://www\.pluralsight\.com/courses/technical-writing-software-documentation",
+]
+
+linkcheck_allowed_redirects = {
+    r"https://yadi\.sk/.*": r"https://disk\.yandex\.ru/.*",
+    r"https://yadi\.sk/.*": r"https://yadi\.sk/showcaptcha.*",
+    r"https://yadi\.sk/i/.*": r"https://disk\.yandex\.ru/i/.*",
+    r"https://youtu\.be/.*": r"https://www\.youtube\.com/.*",
+}
+
+linkcheck_timeout = 30  # seconds
