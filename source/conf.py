@@ -73,9 +73,8 @@ linkcheck_ignore = [
 ]
 
 linkcheck_allowed_redirects = {
-    r"https://yadi\.sk/.*": r"https://disk\.yandex\.ru/.*",
+    r"https://yadi\.sk/[i/]*.*": r"https://disk\.yandex\.[ru|com]*/[i/]*.*",
     r"https://yadi\.sk/.*": r"https://yadi\.sk/showcaptcha.*",
-    r"https://yadi\.sk/i/.*": r"https://disk\.yandex\.ru/i/.*",
     r"https://youtu\.be/.*": r"https://www\.youtube\.com/.*",
 }
 

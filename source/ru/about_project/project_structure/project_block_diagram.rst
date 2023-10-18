@@ -1,7 +1,7 @@
+.. _about.project_structure.diagram:
+
 Структура проекта (схема)
-=========================
-
-
+#########################
 
 
 .. uml::
@@ -14,6 +14,7 @@
     ** _static
     ** _templates
     ** source
+    *** conf.py
     *** en
     *** ru
     **** about_project
@@ -27,11 +28,8 @@
     *** glossary.rst
     *** learning.rst
     *** links.rst
-    ** conf.py
     ** Dockerfile
-    ** make.bat
     ** Makefile
-    ** plantuml.jar
     ** readme.rst
     ** requirements.txt
     @endmindmap
