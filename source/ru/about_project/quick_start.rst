@@ -61,13 +61,13 @@ Docker
 
    .. code-block:: bash
 
-      python3 -m venv .env
+      python3 -m venv .venv
 
 #. Активируйте созданное виртуальное окружение:
 
    .. code-block:: bash
 
-      source .env/bin/activate
+      source .venv/bin/activate
 
 #. Установите пакеты, список которых представлен в файле :file:`requirements.txt`.
 

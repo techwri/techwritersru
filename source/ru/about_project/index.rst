@@ -5,7 +5,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: Содержание:
+   :caption: Оглавление:
 
    technologies_used_in_the_project
    quick_start
@@ -14,9 +14,4 @@
    ../../../../../CONTRIBUTING
    ../../../../../LICENSE
    team
-
-
-
-
-
-
+   ci-cd
