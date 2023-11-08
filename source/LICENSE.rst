@@ -1,5 +1,5 @@
 Лицензия MIT
-============
+############
 
 Copyright (c) 2005-2023, Evgeny Zakharenko, TechWriters.ru info@techwriters.ru
 

@@ -5,7 +5,8 @@ FROM sphinxdoc/sphinx:6.2.1
 ENV PYTHONUNBUFFERED=1
 
 # Установка системных зависимостей
-RUN apt-get update && apt-get install graphviz plantuml --yes --no-install-recommends
+RUN apt-get update
+RUN apt-get install make graphviz plantuml --yes --no-install-recommends
 
 WORKDIR /docs
 COPY . /docs

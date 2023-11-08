@@ -1,0 +1,56 @@
+---
+# Процесс сборки стабильной версии сайта и выгрузки его на хостинг по FTP
+name: Build prod site and deploy to FTP
+
+# Запуск workflow при обновлении ветки master
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy-prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Получение кода из репозитория
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Обновление списка доступных пакетов
+      - name: Update APT index
+        run: sudo apt-get update
+
+      # Установка пакетов, необходимых для сборки сайта
+      - name: Install make, graphviz and JRE
+        run: sudo apt-get install make graphviz default-jre --yes --no-install-recommends
+
+      # Установка актуальной версии Python
+      - name: Install Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Обновление PIP и установка Python-модулей, указанных в файле requirements.txt
+      - name: Update PIP and install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip3 install -r requirements.txt
+
+      # Сборка проекта в формате html
+      - name: Buils Sphinx project
+        run: make html
+
+      # Проверка ссылок
+      - name: Validate links
+        run: make linkcheck
+
+      # Загрузка собранного проекта на хостинг
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_HOST }}  # Используется секрет с адресом FTP-сервера
+          username: ${{ secrets.FTP_USERNAME }}  # Используется секрет с именем пользователя
+          password: ${{ secrets.FTP_PASSWORD }}  # Используется секрет с паролем
+          server-dir: /techwriters.ru/  # Путь на FTP-сервере, куда загружать файлы
+          local-dir: build/html/  # Путь к сгенерированным файлам, которые будут загружены
