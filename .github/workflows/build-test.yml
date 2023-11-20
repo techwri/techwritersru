@@ -6,7 +6,7 @@ name: Build testing site and deploy to FTP
 on:
   push:
     branches:
-      - test
+      - develop
 
 jobs:
   build-and-deploy-prod:
