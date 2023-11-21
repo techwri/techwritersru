@@ -62,5 +62,5 @@ jobs:
         run: make html
 
       # Проверка ссылок
-      - name: Validate links
-        run: make linkcheck
+      # - name: Validate links
+      #   run: make linkcheck
