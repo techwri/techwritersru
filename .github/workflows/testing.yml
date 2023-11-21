@@ -1,31 +1,66 @@
 ---
-name: testing
+# Процесс тестирования сайта
+name: Testing
+
+# Запуск workflow при выталкивании изменений или создании PR
 on:
   - push
   - pull_request
 jobs:
-  testing:
-    name: Testing
+  # Задача проверки корректности сборки Docker-образа
+  build-docker-image:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+
+    steps:
+      # Получение кода из репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Обновление списка доступных пакетов
+      - name: Update APT index
+        run: sudo apt-get update
+
+      # Установка Docker
+      - name: Install Docker
+        run: sudo apt-get install docker --yes --no-install-recommends
+
+      # Запуск сборки Docker-образа
+      - name: Build Docker
+        run: docker build --tag techwriters:latest .
+
+  # Задача проверки корректности сборки сайта
+  build-site:
+    name: Build site
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Получение кода из репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # Обновление списка доступных пакетов
+      - name: Update APT index
+        run: sudo apt-get update
+
+      # Установка пакетов. необходимых для сборки сайта
+      - name: Install make, graphviz and JRE
+        run: sudo apt-get install make graphviz default-jre --yes --no-install-recommends
+
+      # Установка актуальной версии Python
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # Обновление PIP и установка Python-модулей, указанных в файле requirements.txt
       - name: Update PIP and install requirements
         run: |
           python -m pip install --upgrade pip
           pip3 install -r requirements.txt
 
-      - name: Install make, graphviz and JRE
-        run: |
-          sudo apt-get update
-          sudo apt-get install make graphviz default-jre --yes --no-install-recommends
-
+      # Сборка проекта в формате html
       - name: Buils Sphinx project
-        run: make dirhtml
+        run: make html
 
+      # Проверка ссылок
       - name: Validate links
         run: make linkcheck
