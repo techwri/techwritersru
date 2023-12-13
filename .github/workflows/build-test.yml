@@ -47,7 +47,7 @@ jobs:
 
       # Загрузка собранного проекта на хостинг
       - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_HOST_TEST }}  # Используется секрет с адресом FTP-сервера
           username: ${{ secrets.FTP_USERNAME_TEST }}  # Используется секрет с именем пользователя
