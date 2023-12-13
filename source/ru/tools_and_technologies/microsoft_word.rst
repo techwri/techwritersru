@@ -50,4 +50,4 @@ _______
 Полезные ссылки
 ---------------
 
-- https://support.microsoft.com/ru-ru/word - официальный сайт поддержки.
+- https://support.microsoft.com/ru-ru/word - официальный сайт поддержки
