@@ -38,7 +38,6 @@ templates_path = ["_templates"]
 exclude_patterns = []
 languages = ["ru", "en"]  # Список поддерживаемых языков
 gettext_auto_build = False  # Отключает автоматическую генерацию локализации для темы sphinx_book_theme
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
