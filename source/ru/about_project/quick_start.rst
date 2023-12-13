@@ -98,3 +98,5 @@ Docker
       python3 -m http.server -d build/dirhtml
 
    Собранный сайт будет доступен локально по адресу http://127.0.0.1:8080/.
+
+.. http://127.0.0.1:8080/ no_check: true
