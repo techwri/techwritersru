@@ -2,7 +2,7 @@
 # Процесс сборки тестовой версии сайта и выгрузки его на хостинг по FTP
 name: Build testing site and deploy to FTP
 
-# Запуск workflow при обновлении ветки test
+# Запуск workflow при обновлении ветки develop
 on:
   push:
     branches:
@@ -42,8 +42,8 @@ jobs:
         run: make html
 
       # Проверка ссылок
-      # - name: Validate links
-      #   run: make linkcheck
+      - name: Validate links
+        run: make linkcheck
 
       # Загрузка собранного проекта на хостинг
       - name: Upload to FTP
