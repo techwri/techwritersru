@@ -52,5 +52,5 @@ jobs:
           server: ${{ secrets.FTP_HOST_TEST }}  # Используется секрет с адресом FTP-сервера
           username: ${{ secrets.FTP_USERNAME_TEST }}  # Используется секрет с именем пользователя
           password: ${{ secrets.FTP_PASSWORD_TEST }}  # Используется секрет с паролем
-          server-dir: /techwriters.ru/  # Путь на FTP-сервере, куда загружать файлы
+          server-dir: /  # Путь на FTP-сервере, куда загружать файлы
           local-dir: build/html/  # Путь к сгенерированным файлам, которые будут загружены
