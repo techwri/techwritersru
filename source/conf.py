@@ -36,6 +36,7 @@ plantuml_output_format = "png"
 
 templates_path = ["_templates"]
 exclude_patterns = []
+locale_dirs = ['locale']  # папка локализации
 languages = ["ru", "en"]  # Список поддерживаемых языков
 
 # -- Options for HTML output -------------------------------------------------
